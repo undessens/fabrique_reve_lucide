@@ -1,0 +1,26 @@
+#N canvas 597 301 870 813 10;
+#X obj 30 924 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 142 926 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 255 926 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 368 927 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 170 162 cnv 15 650 560 empty empty empty 20 12 0 14 -237376
+-66577 0;
+#X obj 171 727 cnv 15 650 110 empty empty empty 20 12 0 14 -232576
+-66577 0;
+#X obj 7 83 arduino;
+#X text 229 761 SORTIE;
+#X obj 559 48 arduino/arduinoOUT;
+#X obj 263 76 transport/tempo;
+#X obj 177 174 sequence/sequenceur_channel;
+#X obj 180 298 sampling/sample_reader;
+#X obj 409 559 audio_effect/filtering;
+#X obj 688 725 arduino/arduinoIN;
+#X obj 402 741 transport/audio_out;
+#X connect 8 2 12 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
