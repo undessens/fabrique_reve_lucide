@@ -1,16 +1,16 @@
-#N canvas 803 237 665 583 10;
-#X floatatom -55 26 5 0 0 0 - - -, f 5;
-#X floatatom -55 -55 10 0 0 0 - - -, f 10;
+#N canvas 296 237 665 583 10;
+#X floatatom -55 26 5 0 0 0 - - -;
+#X floatatom -55 -55 10 0 0 0 - - -;
 #X obj -55 -24 / 60;
 #X obj -53 -86 hsl 128 15 80 200 0 0 empty empty empty -2 -8 0 10 -203904
--1 -1 6800 1;
+-1 -1 7500 1;
 #X obj -55 46 phasor~;
 #X obj 67 19 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj -54 72 snapshot~;
 #X obj 70 45 metro 2;
-#X floatatom -54 99 5 0 0 0 - - -, f 5;
-#X floatatom 40 -55 5 0 0 0 - - -, f 5;
+#X floatatom -54 99 5 0 0 0 - - -;
+#X floatatom 40 -55 5 0 0 0 - - -;
 #X obj -55 1 / 8;
 #X obj -55 136 * 8;
 #X obj -57 163 i 0;
@@ -121,4 +121,4 @@
 #X connect 34 0 35 0;
 #X connect 35 0 36 0;
 #X connect 36 0 33 0;
-#X coords 0 -1 1 1 250 68 1 -70 -100;
+#X coords 0 -1 1 1 250 68 2 -70 -100;
