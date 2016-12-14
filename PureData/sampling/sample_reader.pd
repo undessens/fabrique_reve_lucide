@@ -1,6 +1,6 @@
-#N canvas 702 127 670 582 10;
+#N canvas 701 133 670 582 10;
 #X obj 208 84 openpanel;
-#X symbolatom 208 116 10 0 0 0 - - -, f 10;
+#X symbolatom 208 116 10 0 0 0 - - -;
 #X obj 208 26 inlet;
 #X obj -113 5 inlet;
 #X obj -125 517 outlet~;

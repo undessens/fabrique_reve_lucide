@@ -1,4 +1,4 @@
-#N canvas 391 114 736 400 12;
+#N canvas 390 120 736 400 12;
 #X obj 500 100 cnv 15 230 67 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X msg 463 258 ports;
@@ -24,8 +24,8 @@
 #X obj 84 239 r arduinoIN;
 #X msg 208 275 devices;
 #X msg 346 262 open \$2;
-#X text 561 130;
-#X text 625 131;
+#X text 355 96 comment;
+#X text 359 126 comment;
 #X connect 1 0 8 0;
 #X connect 2 0 1 0;
 #X connect 3 0 6 0;
