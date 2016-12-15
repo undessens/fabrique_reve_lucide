@@ -1,0 +1,32 @@
+
+
+================= Raspberry ================
+créer un boitier, avec 4 boutons et 4 leds
+création du boitier
+achat de jumper male-female
+écriture du programme python
+
+
+================= Arduino =================
+mise en place d'un boitier
+avec 4 potars
+du makey makey
+et de la commande de solenoide ou de ruban led
+et 2 servomoteurs
+Faire un système de solénoide qui devient percuteur
+achat de piezzo
+
+
+================ Programme ===============
+Checker un code couleur
+faire une belle doc des boites en question
+créer des exemples
+Programme python QT
+gérer l'aspect des enregistrements de valeurs
+
+================ Ateliers ================
+penser dès maintenant à des ateliers concrèts
+
+
+================ Fabrication ============
+Faire la boite du raspberry + la boite du arduino
