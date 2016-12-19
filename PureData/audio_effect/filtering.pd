@@ -1,4 +1,4 @@
-#N canvas 815 274 620 474 10;
+#N canvas 745 269 620 474 10;
 #X obj 42 315 lop~;
 #X obj 42 15 inlet~;
 #X obj 20 429 outlet~;
@@ -10,22 +10,23 @@
 #X msg 264 179 0;
 #X msg 306 180 1;
 #X obj 230 260 *~ 0;
-#X obj -67 66 hsl 80 15 0 180 0 0 empty empty empty -2 -8 0 10 -258113
--1 -1 0 1;
-#X obj -88 4 cnv 15 109 60 empty empty empty 20 12 0 14 -204800 -66577
+#X obj -88 7 cnv 15 116 82 empty empty FILTRE 25 25 0 14 -234520 -262144
 0;
-#X obj -47 45 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
+#X obj -49 42 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
 -1 0;
-#X text -90 46 grave;
-#X text -11 46 aigu;
-#X text -86 3 son;
-#X text -63 23 FILTRE;
+#X text -87 41 grave;
+#X text -10 40 aigu;
+#X text -84 4 son;
 #X text -89 97 son filtré;
 #X obj -42 137 mtof;
-#X obj 316 7 inlet;
+#X obj 316 -11 inlet;
 #X obj 316 27 / 255;
 #X obj 316 46 * 180;
-#X text -25 5 valeur;
+#X text -12 4 valeur;
+#X obj -72 64 hsl 80 15 0 180 0 0 empty empty empty -2 -8 0 10 -232576
+-1 -1 0 1;
+#X obj 203 -19 loadbang;
+#X msg 200 5 127;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 1 0 10 0;
@@ -40,12 +41,13 @@
 #X connect 8 0 5 1;
 #X connect 9 0 10 1;
 #X connect 10 0 3 0;
-#X connect 11 0 3 1;
-#X connect 11 0 19 0;
-#X connect 13 0 4 0;
-#X connect 19 0 0 1;
-#X connect 19 0 3 1;
-#X connect 20 0 21 0;
-#X connect 21 0 22 0;
-#X connect 22 0 11 0;
-#X coords 0 -1 1 1 120 110 2 -90 2;
+#X connect 12 0 4 0;
+#X connect 17 0 0 1;
+#X connect 17 0 3 1;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X connect 22 0 17 0;
+#X connect 23 0 24 0;
+#X connect 24 0 19 0;
+#X coords 0 -1 1 1 120 90 2 -90 2;
