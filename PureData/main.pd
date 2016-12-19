@@ -1,4 +1,4 @@
-#N canvas 0 56 1366 687 10;
+#N canvas 8 56 1351 687 10;
 #X obj 88 -92 cnv 15 730 90 empty empty ENTREES 20 20 0 30 -126994
 -262144 0;
 #X obj -155 -92 cnv 15 240 650 empty empty empty 20 12 0 14 -66577
@@ -23,25 +23,25 @@
 #X obj 94 -60 input/audio_in;
 #X obj 214 462 output/audio_out;
 #X obj 573 462 output/arduino_out;
-#N canvas 301 150 450 300 lib_sortie 0;
+#N canvas 299 153 450 300 lib_sortie 0;
 #X obj 10 84 output/arduino_out;
 #X obj 10 7 output/audio_out;
 #X restore 827 -28 pd lib_sortie;
-#N canvas 754 301 450 300 lib_sampling 1;
+#N canvas 750 307 450 300 lib_sampling 0;
 #X obj 10 8 sampling/sample_reader;
 #X obj 168 10 sampling/simple_looper;
 #X restore 828 -1 pd lib_sampling;
-#N canvas 1 65 450 300 audio_effect 0;
+#N canvas 1 71 450 300 audio_effect 0;
 #X obj 21 17 audio_effect/filtering;
 #X restore 827 23 pd audio_effect;
-#N canvas 129 138 450 300 sequence 0;
+#N canvas 127 141 450 300 sequence 0;
 #X obj 19 10 sequence/drum_box;
 #X obj 20 127 sequence/sequenceur_channel;
 #X restore 827 45 pd sequence;
-#X obj 477 150 sampling/sample_reader;
 #X obj 293 149 sampling/sample_reader;
-#X connect 8 0 18 0;
-#X connect 8 1 19 0;
-#X connect 10 8 18 0;
+#X obj 570 81 sequence/drum_box;
+#X obj 101 31 sequence/sequenceur_channel;
+#X obj 555 253 audio_effect/filtering;
+#X connect 8 1 18 0;
 #X connect 18 0 12 0;
-#X connect 19 0 12 0;
+#X connect 20 0 18 0;
