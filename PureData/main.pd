@@ -1,4 +1,4 @@
-#N canvas 8 56 1351 687 10;
+#N canvas 0 35 1265 709 10;
 #X obj 88 -92 cnv 15 730 90 empty empty ENTREES 20 20 0 30 -126994
 -262144 0;
 #X obj -155 -92 cnv 15 240 650 empty empty empty 20 12 0 14 -66577
@@ -42,6 +42,8 @@
 #X obj 570 81 sequence/drum_box;
 #X obj 101 31 sequence/sequenceur_channel;
 #X obj 555 253 audio_effect/filtering;
+#X msg -117 480 \; pd dsp 1;
 #X connect 8 1 18 0;
 #X connect 18 0 12 0;
+#X connect 19 0 12 1;
 #X connect 20 0 18 0;
