@@ -1,33 +1,42 @@
-#include <Servo.h>
+//#include <Servo.h>
 
-int analogValue[6];
-int analogPin[] = { A0, A1, A2, A3, A4, A5 };
-int digitalinValue[6];
-int digitalinPin[] = { 2, 3, 4, 5, 6, 7 };
-int digitaloutValue[6];
-int digitaloutPin[] = { 8, 9, 10,11, 12, 13 };
-Servo servo1;
-int servo1pin = 13;
+int analogValue[5];
+int analogPin[] = { A0, A1, A2, A3, A4 };
+int digitalinValue[5];
+int digitalinPin[] = { 2, 3, 4, 9 , 10};
+int digitaloutValue[4];
+int digitaloutPin[] = {5, 6, 7, 8 };
+
+// --- Servo not available
+//Servo servo1;
+//int servo1pin = 13;
 
 void setup(){
   
-  for( int i = 0;i<6 ; i++){
+  for( int i=0 ;i<5 ; i++){
     
-    pinMode(analogPin[i], INPUT_PULLUP);
+    pinMode(analogPin[i], INPUT);
     analogValue[i] = analogRead(analogPin[i]); 
-    
+
+  }
+
+  for(int i=0 ; i<5 ; i++ ){
     pinMode(digitalinPin[i], INPUT_PULLUP);
     digitalinValue[i] = digitalRead(digitalinPin[i]);
-    
+  }
+
+    for(int i=0 ; i<4 ; i++ ){
     pinMode(digitaloutPin[i], OUTPUT );
     digitaloutValue[i] = LOW;
     digitalWrite(digitaloutPin[i], LOW);
+    }
     
-    servo1.attach(servo1pin);
-    servo1.write(0);
+    // Servo not available
+    //servo1.attach(servo1pin);
+    //servo1.write(0);
   
 
-}
+    
 
    
    
@@ -42,7 +51,7 @@ void setup(){
 void loop(){
   
   // READ analog pin and write to serial
-  for (int i= 0; i<6; i++){
+  for (int i= 0; i<5; i++){
    
     
     int newValueAn = analogRead(analogPin[i]);
@@ -97,16 +106,15 @@ void loop(){
                  analogWrite(digitaloutPin[4], value);
                 break; 
            case 5: 
-                 //analogWrite(digitaloutPin[5], value);
-                 //servo1.write(map(value, 0, 255, 0, 180));
-                 int duration 
-                 cli();
-                  long start = micros();
-                  digitalWrite(PIN, HIGH);
-                  while (micros() - start < duration)
-                  ;
-                  digitalWrite(PIN, LOW);
-                  sei();
+                 
+//                 int duration 
+//                 cli();
+//                  long start = micros();
+//                  digitalWrite(PIN, HIGH);
+//                  while (micros() - start < duration)
+//                  ;
+//                  digitalWrite(PIN, LOW);
+//                  sei();
                   break;
 
              
