@@ -1,10 +1,15 @@
 //#include <Servo.h>
+#define ANALOGIN 5
+#define DIGITALIN 5
+#define DIGITALOUT 4
 
-int analogValue[5];
+int analogValue[ANALOGIN];
+int analogValueMin[ANALOGIN];
+int analogValueMax[ANALOGIN];
 int analogPin[] = { A0, A1, A2, A3, A4 };
-int digitalinValue[5];
+int digitalinValue[DIGITALIN];
 int digitalinPin[] = { 2, 3, 4, 9 , 10};
-int digitaloutValue[4];
+int digitaloutValue[DIGITALOUT];
 int digitaloutPin[] = {5, 6, 7, 8 };
 
 // --- Servo not available
@@ -13,19 +18,21 @@ int digitaloutPin[] = {5, 6, 7, 8 };
 
 void setup(){
   
-  for( int i=0 ;i<5 ; i++){
+  for( int i=0 ;i<ANALOGIN ; i++){
     
-    pinMode(analogPin[i], INPUT);
-    analogValue[i] = analogRead(analogPin[i]); 
+    pinMode(analogPin[i], INPUT_PULLUP);
+    analogValue[i] = analogRead(analogPin[i]);
+    analogValueMin[i] = analogValue[i]; 
+    analogValueMax[i] = analogValue[i];
 
   }
 
-  for(int i=0 ; i<5 ; i++ ){
+  for(int i=0 ; i<DIGITALIN ; i++ ){
     pinMode(digitalinPin[i], INPUT_PULLUP);
     digitalinValue[i] = digitalRead(digitalinPin[i]);
   }
 
-    for(int i=0 ; i<4 ; i++ ){
+    for(int i=0 ; i<DIGITALOUT ; i++ ){
     pinMode(digitaloutPin[i], OUTPUT );
     digitaloutValue[i] = LOW;
     digitalWrite(digitaloutPin[i], LOW);
@@ -51,24 +58,34 @@ void setup(){
 void loop(){
   
   // READ analog pin and write to serial
-  for (int i= 0; i<5; i++){
+  for (int i= 0; i<ANALOGIN; i++){
    
     
     int newValueAn = analogRead(analogPin[i]);
+
+    //Update min and max
+    if ( newValueAn > analogValueMax[i] ) analogValueMax[i] = newValueAn;
+    if ( newValueAn < analogValueMin[i] ) analogValueMin[i] = newValueAn;
+
+    //Send message if value is different
     if ( abs( newValueAn - analogValue[i]) > 5 ){
      
       analogValue[i] = newValueAn;
-      sendMessage(i, map(newValueAn, 0, 1024, 0, 255 )); 
+      sendMessage(i, map(newValueAn, analogValueMin[i], analogValueMax[i], 0, 255 )); 
       
     }
-    
+
+    }
+
+    //READ digital pin and write to serial
+    for (int i= 0; i<DIGITALIN; i++){
     int newValueDi = digitalRead(digitalinPin[i]);  
     if( newValueDi != digitalinValue[i] ){
 
       digitalinValue[i] = newValueDi;
       int finalValue = 0;
       if (newValueDi) finalValue = 255;
-      sendMessage(i + 20, !newValueDi*255); 
+      sendMessage(i + 20, newValueDi*255); 
       
     }
     

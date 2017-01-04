@@ -1,0 +1,20 @@
+#N canvas 774 234 450 300 10;
+#X obj 101 104 cnv 15 118 55 empty empty REGLER_TEMPO 14 38 0 14 -249726
+-66577 0;
+#X obj 96 35 inlet;
+#X obj 85 227 s tempoValue;
+#X obj 138 35 inlet;
+#X obj 178 35 inlet;
+#X obj 167 227 s tempoGo;
+#X obj 240 226 s tempoStop;
+#X obj 151 105 bng 15 250 50 0 empty empty go 0 20 0 10 -262144 -1
+-1;
+#X obj 193 105 bng 15 250 50 0 empty empty stop 0 20 0 10 -262144 -1
+-1;
+#X text 103 105 valeur;
+#X connect 1 0 2 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X coords 0 -1 1 1 120 60 1 100 100;

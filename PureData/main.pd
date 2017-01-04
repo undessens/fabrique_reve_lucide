@@ -1,4 +1,4 @@
-#N canvas 0 29 1265 709 10;
+#N canvas 61 74 1265 687 10;
 #X obj 337 38 cnv 15 730 90 empty empty ENTREES 20 20 0 30 -126994
 -262144 0;
 #X obj 94 38 cnv 15 240 650 empty empty empty 20 12 0 14 -66577 -66577
@@ -38,12 +38,17 @@
 #X obj 19 10 sequence/drum_box;
 #X obj 20 127 sequence/sequenceur_channel;
 #X restore 1074 397 pd sequence;
-#X obj 542 279 sampling/sample_reader;
 #X obj 819 211 sequence/drum_box;
-#X obj 350 161 sequence/sequenceur_channel;
 #X obj 804 383 audio_effect/filtering;
 #X msg 132 610 \; pd dsp 1;
-#X connect 8 1 18 0;
-#X connect 18 0 12 0;
+#X obj 444 287 sampling/sample_bank;
+#X obj 601 407 transport/set_tempo;
+#X connect 8 0 21 0;
+#X connect 8 1 21 1;
+#X connect 8 2 21 2;
+#X connect 8 3 21 3;
+#X connect 8 4 22 1;
+#X connect 10 2 19 1;
+#X connect 10 6 21 0;
 #X connect 19 0 12 1;
-#X connect 20 0 18 0;
+#X connect 21 0 19 0;
