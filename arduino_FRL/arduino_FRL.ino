@@ -8,9 +8,9 @@ int analogValueMin[ANALOGIN];
 int analogValueMax[ANALOGIN];
 int analogPin[] = { A0, A1, A2, A3, A4 };
 int digitalinValue[DIGITALIN];
-int digitalinPin[] = { 2, 3, 4, 9 , 10};
+int digitalinPin[] = { 2, 3, 4, 5 , 6};
 int digitaloutValue[DIGITALOUT];
-int digitaloutPin[] = {5, 6, 7, 8 };
+int digitaloutPin[] = {7, 8, 9, 10 };
 
 // --- Servo not available
 //Servo servo1;
@@ -22,8 +22,8 @@ void setup(){
     
     pinMode(analogPin[i], INPUT_PULLUP);
     analogValue[i] = analogRead(analogPin[i]);
-    analogValueMin[i] = analogValue[i]; 
-    analogValueMax[i] = analogValue[i];
+    analogValueMin[i] = 120; 
+    analogValueMax[i] = 880;
 
   }
 
