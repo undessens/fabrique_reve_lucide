@@ -1,9 +1,9 @@
-
+================= Contact =================
+Izi maker
 
 ================= Raspberry ================
-créer un boitier, avec 4 boutons et 4 leds
+*créer un boitier, avec 4 boutons et 4 leds
 création du boitier
-achat de jumper male-female
 écriture du programme python
 
 
@@ -15,17 +15,29 @@ et de la commande de solenoide ou de ruban led
 et 2 servomoteurs
 Faire un système de solénoide qui devient percuteur
 achat de piezzo
+http://www.gotronic.fr/art-pcf8574ap-1238.htm
 
 
 ================ Programme ===============
-Checker un code couleur
 faire une belle doc des boites en question
 créer des exemples
-Programme python QT
-gérer l'aspect des enregistrements de valeurs
+Programme python QT pour le menu et choix du programme par défault
+*gérer l'aspect des enregistrements de valeurs, avec fichier texte
+système de arduino auto
+nouvelles boites :
+* niveau de micro  
 
 ================ Ateliers ================
 penser dès maintenant à des ateliers concrèts
+Appeler Killian
+
+================ Contenu =================
+*Appeler Jelus et l'incruste
+
+=============== Communication ============
+Contacter des gens pour communiquer sur un journal de bord
+Envoyer un mail 
+Journal de bord sur le facebook
 
 
 ================ Fabrication ============
