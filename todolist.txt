@@ -1,5 +1,15 @@
 ================= Contact =================
 Izi maker
+Connie
+Marine
+Tiphaine
+Killian
+marta
+Maf
+Crest
+Nicolas Lyon
+anthony marseille
+
 
 ================= Raspberry ================
 *créer un boitier, avec 4 boutons et 4 leds
@@ -23,7 +33,7 @@ faire une belle doc des boites en question
 créer des exemples
 Programme python QT pour le menu et choix du programme par défault
 *gérer l'aspect des enregistrements de valeurs, avec fichier texte
-système de arduino auto
+système de servomoteur auto
 nouvelles boites :
 * niveau de micro  
 

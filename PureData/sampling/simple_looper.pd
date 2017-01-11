@@ -1,4 +1,4 @@
-#N canvas 334 56 1027 687 10;
+#N canvas 276 56 1027 687 10;
 #X obj 208 370 cnv 15 280 250 empty empty empty 20 12 0 14 -262130
 -66577 0;
 #X msg 255 330 stop;
@@ -19,7 +19,7 @@
 -262144 0;
 #X obj 33 64 tgl 15 0 empty empty rec 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 72 64 tgl 15 0 empty \$0_is_loop_playing play 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 -1 -1;
 #X text 64 377 TEMPO;
 #X floatatom -6 588 5 0 0 0 - - -, f 5;
 #X obj -17 663 /;
@@ -83,7 +83,7 @@
 #X obj 217 660 s \$0_is_simplelooper_recording;
 #X obj 992 35 r init_tempo;
 #X obj 147 72 tgl 15 0 empty \$0_contrainst enregistrement 17 7 0 10
--99865 -1 -1 1 1;
+-99865 -1 -1 0 1;
 #X floatatom 215 90 5 0 0 0 Taille_de_la_boucle #0_loop_size -, f
 5;
 #X obj 1041 680 tabplay~ \$0-simple_looper2;
@@ -110,12 +110,12 @@
 #X obj 1259 541 s \$0_contrainst;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-simple_looper2 600000 float 2;
-#X coords 0 1 600000 -1 200 140 1;
-#X restore 588 24 graph;
-#N canvas 0 50 450 250 (subpatch) 0;
+#X coords 0 250 1 249 200 140 0;
+#X restore 617 85 graph;
+#N canvas 1 56 450 250 (subpatch) 0;
 #X array \$0-simple_looper1 600000 float 2;
-#X coords 0 1 600000 -1 200 140 1;
-#X restore 381 22 graph;
+#X coords 0 250 1 249 200 140 0;
+#X restore 572 85 graph;
 #X obj 330 296 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 623 493 0;
