@@ -1,4 +1,4 @@
-#N canvas 660 314 469 395 10;
+#N canvas 658 317 469 395 10;
 #X floatatom 100 215 5 0 0 0 - - -, f 5;
 #X obj 29 232 *~;
 #X obj 296 35 loadbang;
@@ -10,9 +10,14 @@
 #X obj 102 102 cnv 15 162 60 empty empty AUDIO 20 12 0 14 -210924 -1
 0;
 #X obj 214 119 vsl 15 40 0 100 0 0 empty empty volume 0 -9 0 10 -262144
--1 -1 950 1;
+-1 -1 2236 1;
 #X obj 184 119 vsl 15 40 0 1.5 0 0 empty empty gain 0 -9 0 10 -262144
 -1 -1 1950 1;
+#X obj 110 5 loadbang;
+#X msg 215 233 \; pd dsp \$1;
+#X obj 111 140 tgl 15 0 empty empty DSP 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 112 48 1;
 #X connect 0 0 1 1;
 #X connect 1 0 5 0;
 #X connect 1 0 6 0;
@@ -22,4 +27,7 @@
 #X connect 6 0 7 0;
 #X connect 6 0 9 0;
 #X connect 10 0 0 0;
+#X connect 11 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
 #X coords 0 -1 1 1 165 65 2 100 100;

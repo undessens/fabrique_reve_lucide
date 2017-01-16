@@ -1,4 +1,4 @@
-#N canvas 784 188 574 371 10;
+#N canvas 322 158 785 523 10;
 #X obj 53 27 inlet;
 #X obj 59 75 sel 0;
 #X obj 57 156 f 0;
@@ -47,6 +47,9 @@
 #X msg 252 217 80;
 #X msg 353 217 120;
 #X msg 460 215 150;
+#X obj 91 303 cnv 15 138 36 empty empty DIGITAL_VERS_MIDI 0 12 0 14
+-204800 -66577 0;
+#X text 96 324 midi;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 1 1 7 0;
@@ -104,3 +107,4 @@
 #X connect 45 0 3 0;
 #X connect 46 0 3 0;
 #X connect 47 0 3 0;
+#X coords 0 -1 1 1 140 40 1 90 300;
