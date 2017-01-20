@@ -1,0 +1,56 @@
+#N canvas 625 147 684 451 10;
+#X obj 133 293 s cnv-main;
+#X msg 18 201 color -8.97048e+06;
+#X msg 213 122 editmode \$1;
+#X obj 213 173 s pd-main.pd;
+#X obj 208 -27 key;
+#X obj 208 10 sel 32;
+#X obj 214 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 91 86 sel 1 0;
+#X obj -69 -99 cnv 15 228 48 empty empty EDITER 20 12 0 14 -249726
+-66577 0;
+#X obj 186 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 74 -98 tgl 15 0 empty editMode-edit editer 0 25 0 10 -4032 -1
+-1 0 1;
+#X obj 122 -81 tgl 15 0 empty editMode-use utiliser -10 25 0 10 -262144
+-1 -1 1 1;
+#X text -69 -67 pour changer le mode;
+#X msg -131 115 0;
+#X msg -94 115 1;
+#X msg 26 112 0;
+#X msg -13 112 1;
+#X obj -125 178 s editMode-use;
+#X obj -28 177 s editMode-edit;
+#X text -69 -78 appuyer sur ESPACE;
+#X msg -12 231 label editer;
+#X msg 208 233 label utiliser;
+#X msg 146 231 color 0;
+#X obj 352 216 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 362 218 i = B + 255*G + 255*255*R;
+#X text 356 233 final color = - 1 - i;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 7 0 1 0;
+#X connect 7 0 13 0;
+#X connect 7 0 14 0;
+#X connect 7 0 20 0;
+#X connect 7 1 22 0;
+#X connect 7 1 15 0;
+#X connect 7 1 16 0;
+#X connect 7 1 21 0;
+#X connect 9 0 7 0;
+#X connect 9 0 2 0;
+#X connect 13 0 17 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 20 0 0 0;
+#X connect 21 0 0 0;
+#X connect 22 0 0 0;
+#X coords 0 -1 1 1 230 50 1 -70 -100;

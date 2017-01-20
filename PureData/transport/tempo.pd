@@ -1,4 +1,4 @@
-#N canvas 96 56 682 687 10;
+#N canvas 92 56 682 687 10;
 #X obj -55 -24 / 60;
 #X obj 195 392 cnv 15 400 300 empty empty empty 20 12 0 14 -233017
 -66577 0;
@@ -52,18 +52,18 @@
 #X obj 316 456 sel 1;
 #X msg 64 2 stop;
 #X obj 282 -90 r tempoValue;
-#X floatatom 282 -38 5 0 0 0 - - -, f 5;
+#X floatatom 282 -38 5 0 0 0 - - -;
 #X obj 336 -42 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj -55 1 * 4;
 #X obj -58 43 pow -1;
 #X obj -54 70 * 1000;
 #X obj -45 133 metro;
-#X floatatom 33 110 5 0 0 0 - - -, f 5;
+#X floatatom 33 110 5 0 0 0 - - -;
 #X obj -51 210 i 0;
 #X obj -52 241 + 1;
 #X msg 5 267 0;
-#X floatatom -63 277 5 0 0 0 - - -, f 5;
+#X floatatom -63 277 5 0 0 0 - - -;
 #X obj -28 174 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj -65 423 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -74,7 +74,7 @@
 #X obj -17 460 s tempo_click;
 #X obj -69 493 i 0;
 #X obj -65 525 + 1;
-#X floatatom -63 581 5 0 0 0 - - -, f 5;
+#X floatatom -63 581 5 0 0 0 - - -;
 #X obj -71 624 sel 4;
 #X msg -11 535 0;
 #X text -17 427 normal tempo;
@@ -92,7 +92,7 @@
 -1 -1;
 #X obj -280 489 i 0;
 #X obj -276 521 + 1;
-#X floatatom -274 577 5 0 0 0 - - -, f 5;
+#X floatatom -274 577 5 0 0 0 - - -;
 #X msg -222 531 0;
 #X obj -222 496 r init_tempo;
 #X obj -282 620 sel 8;
@@ -101,18 +101,18 @@
 #X obj 289 68 / 1000;
 #X obj 289 99 pow -1;
 #X obj 288 130 * 60;
-#X floatatom 292 165 5 0 0 0 - - -, f 5;
+#X floatatom 292 165 5 0 0 0 - - -;
 #X text -220 373 2 times the tempo;
 #X obj 81 460 outlet;
 #X obj -69 -99 cnv 15 228 64 empty empty TEMPO 20 10 0 14 -249726 -66577
 0;
 #X obj -65 -77 hsl 128 15 40 200 0 0 empty empty empty -2 -8 0 10 -203904
--1 -1 0 1;
-#X floatatom -68 -57 10 0 0 0 - - -, f 10;
+-1 -1 4762 1;
+#X floatatom -68 -57 10 0 0 0 - - -;
 #X obj -2 -58 bng 15 250 50 0 empty tempo_click empty 17 7 0 10 -159808
 -1 -1;
-#X floatatom 16 -57 5 0 0 0 - tempo_bar -, f 5;
-#X floatatom 51 -57 5 0 0 0 - - -, f 5;
+#X floatatom 16 -57 5 0 0 0 - tempo_bar -;
+#X floatatom 51 -57 5 0 0 0 - - -;
 #X obj 96 -67 tgl 25 0 empty empty metronome -28 -6 0 10 -262144 -1
 -1 0 1;
 #X obj 3 -97 bng 15 250 50 0 empty empty go 17 7 0 10 -262144 -1 -1
