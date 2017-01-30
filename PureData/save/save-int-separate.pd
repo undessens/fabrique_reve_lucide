@@ -1,7 +1,7 @@
-#N canvas 485 121 544 604 10;
+#N canvas 616 251 696 604 10;
 #X obj 90 -217 loadbang;
 #X obj 90 -195 t b b b b;
-#X floatatom 104 66 5 0 0 0 - - -, f 5;
+#X floatatom 104 66 5 0 0 0 - - -;
 #X obj 177 -138 symbol \$1;
 #X msg 84 -62 rewind;
 #X msg 24 -62 bang;
@@ -18,8 +18,10 @@
 #X obj 1 323 pack s;
 #X obj -76 -29 inlet;
 #X obj -61 264 outlet;
-#X msg 137 -61 read preset/int-separate-\$1.txt;
-#X msg 2 351 write preset/int-separate-\$1.txt;
+#X msg 137 -61 read ../preset/int-separate-\$1.txt;
+#X msg 2 351 write ../preset/int-separate-\$1.txt;
+#X obj 173 -216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 1 1 4 0;
@@ -45,4 +47,5 @@
 #X connect 17 0 9 0;
 #X connect 19 0 6 0;
 #X connect 20 0 14 0;
+#X connect 21 0 1 0;
 #X coords 0 604 1 603 32 14 0;

@@ -1,7 +1,6 @@
-#N canvas 8 56 1351 687 10;
-#X obj 191 16 cnv 15 178 78 empty empty BOITE_A_SAMPLE 20 25 0 14 -153347
+#N canvas 1568 341 1137 687 10;
+#X obj 190 12 cnv 15 178 82 empty empty BOITE_A_SAMPLE 20 43 0 14 -153347
 -262144 0;
-#X obj 688 11 loadbang;
 #X obj 475 510 outlet~;
 #N canvas 413 153 881 590 bankFile 0;
 #X msg 391 245 ../samples/bathp5.wav;
@@ -70,11 +69,9 @@
 #X connect 18 0 22 0;
 #X connect 19 0 23 0;
 #X restore 1004 161 pd bankFile;
-#X msg 712 58 0;
 #X obj 334 78 hradio 15 1 0 2 empty empty Banque_de_son -50 -4 0 10
 -262144 -1 -262144 0;
-#X text 196 78 Son;
-#X obj 193 -22 inlet;
+#X obj 225 -24 inlet;
 #X obj 343 -29 inlet;
 #X obj 392 -28 inlet;
 #X obj 146 -21 inlet;
@@ -94,38 +91,46 @@
 #X obj 549 238 r samplefile6;
 #X obj 651 233 r samplefile7;
 #X obj 767 231 r samplefile8;
-#X obj 202 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-255;
-#X obj 258 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-255;
-#X obj 310 11 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 255
-255;
-#X obj 352 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 196 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X connect 1 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
-#X connect 7 0 12 0;
-#X connect 7 0 28 0;
-#X connect 8 0 16 0;
-#X connect 8 0 29 0;
-#X connect 9 0 15 0;
-#X connect 9 0 30 0;
-#X connect 10 0 11 0;
-#X connect 10 0 27 0;
-#X connect 11 0 2 0;
-#X connect 12 0 2 0;
-#X connect 13 0 2 0;
-#X connect 14 0 2 0;
-#X connect 15 0 2 0;
-#X connect 16 0 2 0;
-#X connect 17 0 2 0;
-#X connect 19 0 11 1;
-#X connect 20 0 12 1;
-#X connect 21 0 16 1;
-#X connect 22 0 15 1;
-#X connect 23 0 13 1;
-#X connect 24 0 14 1;
-#X connect 25 0 17 1;
-#X connect 26 0 18 1;
+#X obj 241 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+255;
+#X obj 296 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+255;
+#X obj 348 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 191 81 cnv 12 40 12 empty empty empty 20 12 0 14 -4160 -66577
+0;
+#X text 197 77 son;
+#X obj 191 12 cnv 12 30 12 empty empty 1 9 6 0 12 -204786 -1 0;
+#X obj 237 12 cnv 12 30 12 empty empty 2 9 6 0 12 -204786 -1 0;
+#X obj 287 12 cnv 12 30 12 empty empty 3 9 6 0 12 -204786 -1 0;
+#X obj 338 12 cnv 12 30 12 empty empty 4 9 6 0 12 -204786 -1 0;
+#X obj 656 12 ../save/save-int-separate sample_bank-\$1;
+#X connect 3 0 2 0;
+#X connect 3 0 34 0;
+#X connect 4 0 25 0;
+#X connect 5 0 26 0;
+#X connect 6 0 27 0;
+#X connect 7 0 24 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 1 0;
+#X connect 11 0 1 0;
+#X connect 12 0 1 0;
+#X connect 13 0 1 0;
+#X connect 14 0 1 0;
+#X connect 16 0 8 1;
+#X connect 17 0 9 1;
+#X connect 18 0 13 1;
+#X connect 19 0 12 1;
+#X connect 20 0 10 1;
+#X connect 21 0 11 1;
+#X connect 22 0 14 1;
+#X connect 23 0 15 1;
+#X connect 24 0 8 0;
+#X connect 25 0 9 0;
+#X connect 26 0 13 0;
+#X connect 27 0 12 0;
+#X connect 34 0 3 0;
 #X coords 0 -1 100 1 180 90 2 190 8;

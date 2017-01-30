@@ -1,7 +1,7 @@
 //#include <Servo.h>
 #define ANALOGIN 5
 #define DIGITALIN 5
-#define DIGITALOUT 4
+#define DIGITALOUT 2
 
 int analogValue[ANALOGIN];
 int analogValueMin[ANALOGIN];
@@ -10,7 +10,7 @@ int analogPin[] = { A0, A1, A2, A3, A4 };
 int digitalinValue[DIGITALIN];
 int digitalinPin[] = { 2, 3, 4, 5 , 6};
 int digitaloutValue[DIGITALOUT];
-int digitaloutPin[] = {7, 8, 9, 10 };
+int digitaloutPin[] = {7, 8 };
 
 // --- Servo not available
 //Servo servo1;

@@ -1,4 +1,4 @@
-#N canvas 89 146 1081 597 10;
+#N canvas 1492 430 1022 597 10;
 #X obj 208 370 cnv 15 280 250 empty empty empty 20 12 0 14 -262130
 -66577 0;
 #X msg 255 330 stop;
@@ -15,53 +15,53 @@
 #X obj 16 455 timer;
 #X obj 56 486 s \$0_timer;
 #X obj 69 311 inlet~;
-#X obj 31 34 cnv 15 218 75 empty empty PEDALE_DE_BOUCLE 2 20 0 14 -153347
--262144 0;
+#X obj 31 34 cnv 15 218 72 empty empty PEDALE_DE_BOUCLE 14 26 0 14
+-153347 -262144 0;
 #X obj 34 77 tgl 15 0 empty empty rec 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 73 77 tgl 15 0 empty \$0_is_loop_playing play 17 7 0 10 -262144
--1 -1 0 1;
+#X obj 87 77 tgl 15 0 empty \$0_is_loop_playing play 17 7 0 10 -262144
+-1 -1 0 -1;
 #X text 64 377 TEMPO;
-#X floatatom -6 588 5 0 0 0 - - -, f 5;
+#X floatatom -6 588 5 0 0 0 - - -;
 #X obj -17 663 /;
 #X obj 123 506 log;
 #X obj 125 595 i;
 #X obj 123 545 / 0.693147;
-#X floatatom 124 572 5 0 0 0 - - -, f 5;
-#X floatatom 126 626 5 0 0 0 - - -, f 5;
+#X floatatom 124 572 5 0 0 0 - - -;
+#X floatatom 126 626 5 0 0 0 - - -;
 #X obj 136 712 pow;
 #X msg 102 684 2;
-#X floatatom 137 756 5 0 0 0 - - -, f 5;
+#X floatatom 137 756 5 0 0 0 - - -;
 #X obj 137 804 s \$0_loop_size;
 #X obj 102 651 t b f;
 #X text -4 785 ici la véritable valeur du tempo;
 #X obj 888 20 cnv 15 200 650 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 1008 230 * 44.1;
+#X obj 1033 323 * 44.1;
 #X obj 988 478 pack 0 f;
-#X floatatom 1020 266 10 0 0 0 - - -, f 10;
-#X floatatom 888 321 5 0 0 0 - - -, f 5;
+#X floatatom 1046 351 10 0 0 0 - - -;
+#X floatatom 916 321 5 0 0 0 - - -;
 #X obj 848 727 outlet~;
-#X obj 896 186 mod \$1;
+#X obj 889 168 mod \$1;
 #X obj 889 116 f;
 #X obj 923 117 + 1;
 #X obj 889 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 891 157 5 0 0 0 - - -, f 5;
-#X obj 899 213 select 0;
-#X obj 897 259 bng 35 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom 889 145 5 0 0 0 - - -;
+#X obj 889 191 select 0;
+#X obj 889 218 bng 35 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1103 405 cnv 15 100 120 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 1126 442 Kill;
 #X obj 1125 320 r \$0_is_loop_playing;
-#X obj 1004 185 r \$0_timer;
+#X obj 1033 296 r \$0_timer;
 #X obj 987 118 r \$0_loop_size;
-#X msg 833 444 symbol /ready_to_play;
+#X msg 855 441 symbol /ready_to_play;
 #X msg 850 470 symbol /ready_to_stop;
 #X msg 1060 487 stop;
-#X obj 875 514 s \$0_toOSC;
-#X obj 941 323 i 0;
-#X obj 885 379 change;
+#X obj 818 500 s \$0_toOSC;
+#X obj 889 271 i 0;
+#X obj 889 379 change;
 #X obj 1009 438 select 1 0;
 #X obj 1126 412 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -70,7 +70,7 @@
 #X text 954 16 PLAY LOOP;
 #X obj -31 824 s tempoValue;
 #X obj 226 294 sel 1;
-#X floatatom 17 513 5 0 0 0 - - -, f 5;
+#X floatatom 17 513 5 0 0 0 - - -;
 #X obj -35 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 105 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -79,13 +79,12 @@
 #X msg 992 82 0;
 #X obj 361 452 tabwrite~ \$0-simple_looper1;
 #X obj -38 502 t f f;
-#X obj 898 628 tabplay~ \$0-simple_looper1;
+#X obj 889 563 tabplay~ \$0-simple_looper1;
 #X obj 217 660 s \$0_is_simplelooper_recording;
 #X obj 992 35 r init_tempo;
 #X obj 147 72 tgl 15 0 empty \$0_contrainst enregistrement 17 7 0 10
 -99865 -1 -1 0 1;
-#X floatatom 215 90 5 0 0 0 Taille_de_la_boucle #0_loop_size -, f
-5;
+#X floatatom 215 90 5 0 0 0 Taille_de_la_boucle #0_loop_size -;
 #X obj 1041 680 tabplay~ \$0-simple_looper2;
 #X obj 210 117 t b f;
 #X obj 178 167 i 0;
@@ -143,16 +142,17 @@
 #X obj 178 -46 sel 0;
 #X obj 139 -69 route bang float;
 #X msg 541 292 0;
-#X obj 886 407 select 1 0;
-#X obj 952 292 r \$0_is_loop_playing;
+#X obj 889 407 select 1 0;
+#X obj 935 246 r \$0_is_loop_playing;
 #X obj 1129 360 sel -1;
 #X obj 304 -94 inlet;
 #X obj 330 -39 sel 0;
 #X obj 300 -70 route bang float;
-#X text 38 29 son;
-#X text 204 30 effacer;
-#X text 105 30 enregistrer;
-#X text 33 95 son;
+#X obj 31 94 cnv 12 40 12 empty empty son 10 5 0 12 -4160 -1 0;
+#X obj 31 34 cnv 12 40 12 empty empty son 10 5 0 12 -4160 -1 0;
+#X obj 112 34 cnv 12 30 12 empty empty rec 4 6 0 12 -204786 -1 0;
+#X obj 198 34 cnv 12 50 12 empty empty effacer 4 6 0 12 -204786 -1
+0;
 #X connect 1 0 4 0;
 #X connect 1 0 9 0;
 #X connect 1 0 64 0;

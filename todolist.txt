@@ -35,19 +35,23 @@ Programme python QT pour le menu et choix du programme par défault
 *gérer l'aspect des enregistrements de valeurs, avec fichier texte
 système de servomoteur auto
 nouvelles boites :
-* niveau de micro  
+* niveau de micro 
+Separer le clavier du midi clavier
+Faire un code couleur pour le type d'entree
+Faire une autre gestion des samples, avec sequenceur
+mettre la visu de l'avancement du looper dans le looper
+faire des synthe
+faire un diviseur de midi vers bang
+
 
 ================ Ateliers ================
 penser dès maintenant à des ateliers concrèts
-Appeler Killian
 
-================ Contenu =================
-*Appeler Jelus et l'incruste
+
 
 =============== Communication ============
-Contacter des gens pour communiquer sur un journal de bord
+
 Envoyer un mail 
-Journal de bord sur le facebook
 
 
 ================ Fabrication ============

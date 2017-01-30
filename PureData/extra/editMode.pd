@@ -1,9 +1,9 @@
-#N canvas 625 147 684 451 10;
+#N canvas 613 165 684 451 10;
 #X obj 133 293 s cnv-main;
 #X msg 18 201 color -8.97048e+06;
 #X msg 213 122 editmode \$1;
 #X obj 213 173 s pd-main.pd;
-#X obj 208 -27 key;
+#X obj 208 -80 key;
 #X obj 208 10 sel 32;
 #X obj 214 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
