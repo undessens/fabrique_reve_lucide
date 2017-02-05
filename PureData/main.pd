@@ -1,22 +1,21 @@
-#N canvas 8 56 1351 687 10;
+#N canvas 163 23 1351 687 10;
 #X obj 337 23 cnv 15 880 90 empty empty ENTREES 20 20 0 30 -126994
 -262144 0;
 #X obj 93 23 cnv 15 240 650 empty empty empty 20 12 0 14 -66577 -66577
 0;
-#X obj 337 116 cnv 15 880 470 empty cnv-main editer 20 12 0 14 -142908
+#X obj 337 116 cnv 15 880 470 empty cnv-main utiliser 20 12 0 14 -262144
 -262144 0;
 #X obj 337 589 cnv 15 880 90 empty empty SORTIES 8 80 0 30 -53394 -262144
 0;
-#X obj 97 88 transport/tempo;
 #X obj 100 30 arduino/arduino_main;
 #X obj 467 582 output/audio_out;
 #X obj 1031 581 output/arduino_out;
 #X obj 992 43 input/arduino_in;
 #X obj 98 169 extra/editMode;
 #X obj 139 273 extra/open_sub entree;
-#X obj 715 54 input/clavier_midi 862;
-#X obj 355 52 input/audio_in 1040;
-#X obj 549 53 input/clavier 2335;
+#X obj 805 54 input/clavier_midi 862;
+#X obj 357 57 input/audio_in 1040;
+#X obj 577 53 input/clavier 2335;
 #X obj 139 359 extra/open_sub sampling;
 #X obj 139 400 extra/open_sub audio_effect;
 #X obj 139 441 extra/open_sub sequence;
@@ -49,14 +48,16 @@
 #X obj 234 255 extra/add sequence/sampler_sequence sequence;
 #X obj 57 430 extra/close sequence;
 #X restore 63 145 pd sequence;
-#N canvas 379 249 428 395 sampling 0;
+#N canvas 242 102 436 522 sampling 1;
 #X obj -45 234 sampling/simple_looper;
 #X obj -6 137 sampling/sample_bank 1;
-#X obj 32 11 sampling/sample_reader;
 #X obj 201 35 extra/add sampling/sample_reader sampling;
 #X obj 201 141 extra/add sampling/sample_bank sampling;
 #X obj 206 236 extra/add sampling/simple_looper sampling;
-#X obj 27 342 extra/close sampling;
+#X obj 12 482 extra/close sampling;
+#X obj 32 11 sampling/sample_reader;
+#X obj 212 350 extra/add sampling/sample_wrap;
+#X obj 24 325 sampling/sample_wrap 14509;
 #X restore 63 101 pd sampling;
 #N canvas 364 220 409 374 sortie 0;
 #X obj 62 206 output/arduino_out;
@@ -85,7 +86,16 @@
 0;
 #X coords 0 -1 1 1 40 20 1 200 100;
 #X restore 98 642 pd sub;
-#X obj 393 209 sampling/sample_reader 7362;
-#X connect 8 5 21 0;
-#X connect 13 0 21 0;
-#X connect 21 0 6 0;
+#X obj 383 185 sampling/sample_reader 7362;
+#X obj 79 86 transport/tempo_phaser;
+#X obj 808 168 sampling/sample_reader 3210;
+#X obj 1048 135 sequence/sampler_sequence 116;
+#X obj 804 516 analysis/offset_detect;
+#X obj 563 187 sampling/sample_wrap 5200;
+#X connect 7 5 20 0;
+#X connect 12 0 20 0;
+#X connect 12 1 22 0;
+#X connect 20 0 5 0;
+#X connect 22 0 5 0;
+#X connect 23 0 5 0;
+#X connect 25 0 5 0;
