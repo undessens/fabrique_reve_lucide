@@ -1,4 +1,4 @@
-#N canvas 463 122 851 597 10;
+#N canvas 741 34 699 712 10;
 #X obj -440 90 sel 0 1 2 3 4 5 6 7;
 #X obj -351 234 sel 1;
 #X obj -351 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -34,22 +34,22 @@
 #X obj -84 156 i 0;
 #X obj -169 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 191 12 cnv 15 118 169 empty empty SAMPLER 28 19 0 14 -1375 -262144
-0;
-#X obj 194 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -1 -4032
+#X obj 191 12 cnv 15 118 135 empty empty LIRE_UN_SON 18 22 0 14 -1375
+-262144 0;
+#X obj 194 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -1 -4032
 -1;
-#X obj 212 36 hradio 11 1 0 8 sample_seq-\$1 tempo_bar empty 0 -8 0
+#X obj 212 43 hradio 11 1 0 8 sample_seq-\$1 tempo_bar empty 0 -8 0
 10 -4032 -1 -1 1;
-#X obj 212 47 ../save/save-8toogle sampler_seq-\$1;
+#X obj 212 54 ../save/save-8toogle sampler_seq-\$1;
 #X obj -220 91 unpack f f f f f f f f;
 #X obj -434 42 r sample_seq-\$1;
-#X obj 193 77 hradio 14 1 0 8 sampler_seq_bank-\$1-out sampler_seq_bank-\$1-in
+#X obj 193 84 hradio 14 1 0 8 sampler_seq_bank-\$1-out sampler_seq_bank-\$1-in
 banque_de_son 0 -6 0 10 -33289 -262144 -262144 0;
 #X obj 463 -69 ../save/save-int-separate sampler_seq_bank-\$1;
 #X obj 463 -23 s sampler_seq_bank-\$1-in;
 #X obj 463 -121 r sampler_seq_bank-\$1-out;
-#X floatatom 281 62 2 0 0 0 - - vide, f 2;
-#X floatatom 291 94 2 1 8 0 - - vide, f 2;
+#X floatatom 274 68 2 0 0 0 - - vide;
+#X floatatom 291 101 2 1 8 0 - - vide;
 #X obj 465 51 r sampler_seq_num-\$1-out;
 #X obj 465 101 ../save/save-int-separate sampler_seq_num-\$1;
 #X obj 465 154 s sampler_seq_num-\$1-in;
@@ -5070,10 +5070,9 @@ banque_de_son 0 -6 0 10 -33289 -262144 -262144 0;
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X coords 0 1 70000 -1 100 30 1 0 0;
-#X restore 200 137 graph;
+#X coords 0 250 1 249 100 30 0;
+#X restore -25 9 graph;
 #X obj 380 319 soundfiler;
-#X msg 380 222 ../samples/\$2/\$1.wav;
 #X msg 380 293 read \$1 \$2-sample_seq;
 #X obj 380 253 pack s \$1;
 #X msg 118 301 stop;
@@ -5082,15 +5081,17 @@ banque_de_son 0 -6 0 10 -33289 -262144 -262144 0;
 #X obj 119 390 outlet~;
 #X obj 118 349 tabplay~ \$1-sample_seq;
 #X obj 322 272 t b l;
-#X obj 192 109 hradio 14 1 0 8 sampler_seq_num-\$1-out sampler_seq_num-\$1-in
+#X obj 192 116 hradio 14 1 0 8 sampler_seq_num-\$1-out sampler_seq_num-\$1-in
 numero_du_sample 0 -6 0 10 -33289 -262144 -262144 3;
 #X obj 112 -60 inlet;
 #X obj 112 -36 route bang float;
 #X obj 117 3 sel 0;
 #X text 52 -35 comment;
-#X obj 191 171 cnv 12 40 12 empty empty son 10 5 0 12 -4160 -1 0;
-#X obj 191 12 cnv 12 35 12 empty empty bang 4 6 0 12 -204786 -1 0;
+#X obj 191 137 cnv 12 40 12 empty empty son 10 5 0 12 -4160 -1 0;
+#X obj 191 12 cnv 12 35 12 empty empty lire 4 6 0 12 -204786 -1 0;
 #X obj 379 180 pack 1 1;
+#X msg 380 222 ../samples/oneShot/\$2/\$1.wav;
+#X obj 408 48 t b f;
 #X connect 0 0 17 0;
 #X connect 0 1 18 0;
 #X connect 0 2 19 0;
@@ -5124,7 +5125,7 @@ numero_du_sample 0 -6 0 10 -33289 -262144 -262144 3;
 #X connect 23 0 13 0;
 #X connect 24 0 15 0;
 #X connect 25 0 27 0;
-#X connect 27 0 51 0;
+#X connect 27 0 50 0;
 #X connect 29 0 30 0;
 #X connect 30 0 17 1;
 #X connect 30 1 18 1;
@@ -5141,24 +5142,26 @@ numero_du_sample 0 -6 0 10 -33289 -262144 -262144 3;
 #X connect 39 0 42 0;
 #X connect 41 0 39 0;
 #X connect 41 0 37 0;
-#X connect 41 0 62 0;
+#X connect 41 0 61 0;
 #X connect 42 0 40 0;
 #X connect 43 0 36 0;
 #X connect 43 0 33 0;
-#X connect 43 0 62 1;
+#X connect 43 0 63 0;
 #X connect 44 0 34 0;
-#X connect 47 0 49 0;
-#X connect 48 0 46 0;
-#X connect 49 0 54 0;
-#X connect 50 0 53 0;
-#X connect 51 0 53 0;
-#X connect 53 0 52 0;
-#X connect 54 0 51 0;
-#X connect 54 1 48 0;
-#X connect 56 0 57 0;
-#X connect 57 0 27 0;
-#X connect 57 1 58 0;
-#X connect 58 0 50 0;
-#X connect 58 1 27 0;
-#X connect 62 0 47 0;
-#X coords 0 -1 100 1 120 180 2 190 8;
+#X connect 47 0 46 0;
+#X connect 48 0 53 0;
+#X connect 49 0 52 0;
+#X connect 50 0 52 0;
+#X connect 52 0 51 0;
+#X connect 53 0 50 0;
+#X connect 53 1 47 0;
+#X connect 55 0 56 0;
+#X connect 56 0 27 0;
+#X connect 56 1 57 0;
+#X connect 57 0 49 0;
+#X connect 57 1 27 0;
+#X connect 61 0 62 0;
+#X connect 62 0 48 0;
+#X connect 63 0 61 0;
+#X connect 63 1 61 1;
+#X coords 0 -1 100 1 120 145 2 190 8;

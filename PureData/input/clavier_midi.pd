@@ -1,4 +1,4 @@
-#N canvas 262 378 963 365 10;
+#N canvas 244 209 963 365 10;
 #X obj 101 101 cnv 15 118 60 empty empty CLAVIER_MIDI 20 12 0 14 -210924
 -1 0;
 #X obj 87 -44 i 0;
@@ -9,14 +9,14 @@
 #X obj 212 -44 i 0;
 #X obj 237 -44 i 0;
 #X obj 261 -44 i 0;
-#X obj 122 131 tgl 12 0 empty empty s 4 7 0 8 -228856 -1 -1 0 1;
-#X obj 134 131 tgl 12 0 empty empty d 4 7 0 8 -228856 -1 -1 0 1;
-#X obj 146 131 tgl 12 0 empty empty f 4 7 0 8 -228856 -1 -1 0 1;
-#X obj 158 131 tgl 12 0 empty empty g 4 7 0 8 -228856 -1 -1 0 1;
-#X obj 170 131 tgl 12 0 empty empty h 4 7 0 8 -228856 -1 -1 0 1;
-#X obj 181 131 tgl 12 0 empty empty j 4 7 0 8 -228856 -1 -1 0 1;
-#X obj 193 131 tgl 12 0 empty empty k 4 7 0 8 -228856 -1 -1 0 1;
-#X obj 205 131 tgl 12 0 empty empty l 4 7 0 8 -228856 -1 -1 0 1;
+#X obj 122 131 tgl 12 0 empty empty s 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 134 131 tgl 12 0 empty empty d 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 146 131 tgl 12 0 empty empty f 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 158 131 tgl 12 0 empty empty g 4 7 0 10 -228856 -1 -1 1 1;
+#X obj 170 131 tgl 12 0 empty empty h 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 181 131 tgl 12 0 empty empty j 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 193 131 tgl 12 0 empty empty k 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 205 131 tgl 12 0 empty empty l 4 7 0 10 -228856 -1 -1 0 1;
 #X obj 6 -289 keyname;
 #X obj 2 -196 pack s f;
 #X obj 5 -225 symbol;

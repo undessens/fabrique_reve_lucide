@@ -19,7 +19,7 @@
 #X obj 246 -157 inlet;
 #X obj 394 -110 inlet;
 #X obj 435 -110 inlet;
-#X obj 261 -46 cnv 15 109 73 empty empty ARDUINO 20 60 0 14 -184827
+#X obj 261 -47 cnv 15 109 73 empty empty LUCIBOX 20 60 0 14 -184827
 -1 0;
 #X obj 354 -45 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -258113
 -1 -1 0 1;

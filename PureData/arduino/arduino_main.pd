@@ -1,8 +1,8 @@
 #N canvas 384 129 903 445 12;
-#X obj 500 100 cnv 15 230 40 empty empty ARDUINO 15 12 0 14 -249662
+#X obj 500 100 cnv 15 230 40 empty empty LUCIBOX 15 12 0 14 -249662
 -66577 0;
 #X msg 576 335 ports;
-#X obj 495 275 loadbang, f 9;
+#X obj 495 275 loadbang;
 #X obj 355 289 route ports open;
 #X obj 409 334 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
