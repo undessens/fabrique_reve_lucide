@@ -1,7 +1,18 @@
+/*
+ *        FABRIQUE DU REVE LUCIDE
+ *        github.com/undessens/fabrique_reve_lucide
+ * 
+ *        Author : Aurelien Conil
+ *        Casemate Fablab de Grenoble
+ */
+
 //#include <Servo.h>
+#include<Wire.h>
 #define ANALOGIN 5
 #define DIGITALIN 5
 #define DIGITALOUT 2
+
+#define I2CADRESS_LED 56
 
 int analogValue[ANALOGIN];
 int analogValueMin[ANALOGIN];
@@ -11,6 +22,7 @@ int digitalinValue[DIGITALIN];
 int digitalinPin[] = { 2, 3, 4, 5 , 6};
 int digitaloutValue[DIGITALOUT];
 int digitaloutPin[] = {7, 8 };
+byte ledI2C = 0;
 
 // --- Servo not available
 //Servo servo1;
@@ -42,14 +54,14 @@ void setup(){
     //servo1.attach(servo1pin);
     //servo1.write(0);
   
-
-    
+    // Wire for I2C plugins
+    Wire.begin();
 
    
    
    Serial.begin(57600);
    delay(100);
-   Serial.println("Truc");
+   Serial.println("Fabrique_FRL");
    
    
 
@@ -122,7 +134,7 @@ void loop(){
             case 4: 
                  analogWrite(digitaloutPin[4], value);
                 break; 
-           case 5: 
+            case 5: 
                  
 //                 int duration 
 //                 cli();
@@ -133,8 +145,15 @@ void loop(){
 //                  digitalWrite(PIN, LOW);
 //                  sei();
                   break;
+             
 
              
+             }
+
+             if( channel > 19 && channel < 29 ){
+                // Here are the led with I2C plugins
+               sendLedI2C( channel - 20, value)  ;
+              
              }
 
       
@@ -164,5 +183,20 @@ void sendMessage(int address, int value){
  Serial.print(char(14));
  //Serial.println("--");
   
+}
+
+void sendLedI2C( int num, int value){
+
+if (value > 0) 
+{
+  ledI2C = ledI2C | (1 << (num)); 
+}
+else {
+  ledI2C = ledI2C ^ (1 << (num)); 
+}
+    Wire.beginTransmission(56);     //Begin the transmission to PCF8574
+    Wire.write(ledI2C);                                //Send the data to PCF8574
+    Wire.endTransmission(); 
+
 }
 
