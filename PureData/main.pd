@@ -1,15 +1,15 @@
-#N canvas 145 23 1247 685 10;
+#N canvas 0 22 1440 747 10;
 #X obj 337 23 cnv 15 880 90 empty empty ENTREES 20 20 0 30 -126994
 -262144 0;
 #X obj 93 23 cnv 15 240 650 empty empty empty 20 12 0 14 -66577 -66577
 0;
-#X obj 337 116 cnv 15 880 470 empty cnv-main editer 20 12 0 14 -142908
+#X obj 337 116 cnv 15 880 470 empty cnv-main utiliser 20 12 0 14 -262144
 -262144 0;
 #X obj 337 589 cnv 15 880 90 empty empty SORTIES 8 76 0 30 -53394 -262144
 0;
 #X obj 97 138 arduino/arduino_main;
 #X obj 438 583 output/audio_out;
-#X obj 1099 583 output/arduino_out;
+#X obj 704 578 output/arduino_out;
 #X obj 991 42 input/arduino_in;
 #X obj 806 51 input/clavier_midi 862;
 #X obj 357 57 input/audio_in 1040;
@@ -30,13 +30,13 @@
 #X obj 10 7 output/audio_out;
 #X obj 11 107 output/audio_out3;
 #X obj 49 414 extra/close sortie;
-#X obj 62 206 output/arduino_out;
 #X obj 65 303 cnv 15 100 60 empty empty TEMPO 20 12 0 14 -184825 -33289
 0;
 #X obj 202 105 extra/add output/audio_out3 sortie;
 #X obj 203 206 extra/add output/arduino_out sortie;
 #X obj 204 9 extra/add output/audio_out output;
 #X obj 206 303 extra/add output/tempo_phaser;
+#X obj 62 206 output/arduino_out;
 #X restore 64 77 pd sortie;
 #N canvas 546 305 423 300 transport 0;
 #X obj 34 202 extra/close transport;
@@ -46,16 +46,16 @@
 #X obj 200 100 cnv 15 40 20 empty empty admin 3 12 0 12 -66577 -191407
 0;
 #N canvas 257 109 436 522 son 0;
-#X obj 12 284 extra/close sampling;
 #X obj 32 11 sampling/read_sample 1;
 #X obj 221 59 extra/add sampling/read_sample;
+#X obj 37 230 extra/close son;
 #X restore 63 101 pd son;
 #N canvas 229 87 446 525 boucle 0;
-#X obj 57 430 extra/close sequence;
 #X obj 261 180 extra/add looping/read_loop;
 #X obj 258 44 extra/add looping/rec_loop;
 #X obj 13 136 looping/read_loop 0;
 #X obj 8 39 looping/rec_loop 0;
+#X obj 53 399 extra/close boucle;
 #X restore 63 145 pd boucle;
 #N canvas 728 411 450 300 analyse 0;
 #X obj 150 21 extra/add analysis/offset_detect;
@@ -63,8 +63,8 @@
 #X restore 65 164 pd analyse;
 #N canvas 576 395 450 300 effet 0;
 #X obj 21 17 audio_effect/filtering;
-#X obj 33 203 extra/close audio_effect;
 #X obj 162 30 extra/add audio_effect/filtering audio_effect;
+#X obj 21 171 extra/close effet;
 #X restore 63 123 pd effet;
 #X coords 0 -1 1 1 40 20 1 200 100;
 #X restore 98 642 pd sub;
@@ -79,8 +79,17 @@
 #X obj 101 28 cnv 15 220 100 empty empty LOGIREVE 20 32 2 35 -262144
 -66577 0;
 #X text 233 84 version 1;
-#X obj 591 235 looping/read_loop 8783;
-#X obj 757 231 sampling/read_sample 462;
-#X connect 10 6 23 0;
+#X obj 686 237 looping/read_loop 8783;
+#X obj 852 233 sampling/read_sample 462;
+#X obj 408 241 looping/rec_loop 9649;
+#X obj 998 234 looping/read_loop 862;
+#X connect 7 0 19 0;
+#X connect 7 5 23 0;
+#X connect 7 6 24 1;
+#X connect 7 8 19 1;
+#X connect 8 0 6 8;
+#X connect 9 0 24 0;
 #X connect 22 0 5 0;
 #X connect 23 0 5 0;
+#X connect 24 0 5 0;
+#X connect 25 0 5 0;

@@ -156,14 +156,14 @@
 0;
 #X floatatom -62 -58 6 0 0 0 - - -;
 #X obj -61 -77 hsl 128 15 80 200 0 0 empty empty empty -2 -8 0 10 -203904
--1 -1 6910 1;
+-1 -1 3713 1;
 #X obj -20 -58 bng 15 250 50 0 empty tempo_click_bang empty 17 7 0
 10 -159808 -1 -1;
 #X obj 90 -51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 33 -53 metronome;
 #X floatatom 0 -58 5 0 0 0 - - -;
-#X obj 169 344 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 169 344 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 194 300 0;
 #X msg 156 300 1;
@@ -174,7 +174,7 @@
 #X obj -67 214 *~ 6;
 #X obj -70 446 / 6;
 #X text -29 140 6 is the real duration of 16 beqts with 80 bpm;
-#X obj 93 -83 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 93 -83 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 165 -128 0;
 #X msg 86 -128 1;
@@ -185,7 +185,7 @@
 #X obj -159 -219 + 40;
 #X obj 154 -298 inlet;
 #X obj 247 -250 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 200 -191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 247 -229 sel 0;
@@ -226,7 +226,6 @@
 #X connect 28 0 31 0;
 #X connect 29 0 1 1;
 #X connect 30 0 29 0;
-#X connect 31 0 33 0;
 #X connect 31 1 32 0;
 #X connect 32 0 40 0;
 #X connect 34 0 69 0;
