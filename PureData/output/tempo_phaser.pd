@@ -1,4 +1,4 @@
-#N canvas 700 23 688 780 10;
+#N canvas 331 23 688 780 10;
 #X floatatom -65 57 5 0 0 0 - - -;
 #X obj -65 128 phasor~;
 #X obj -70 315 snapshot~;
@@ -146,24 +146,24 @@
 #X msg 122 104 0;
 #X obj 122 64 r reset_tempo;
 #X obj -81 -193 t b f;
-#X obj -54 -170 / 0.8;
-#X obj -163 -168 s reset_tempo;
+#X obj -54 -152 / 0.8;
+#X obj -184 -163 s reset_tempo;
 #X obj 123 38 t b b;
 #X msg -220 61 0;
 #X obj -220 0 r tempoStopOut;
 #X obj 0 -145 r tempo_bar;
-#X obj -69 -95 cnv 15 200 60 empty empty TEMPO 57 10 0 14 -184827 -33289
-0;
+#X obj -69 -95 cnv 15 200 60 empty empty LECTURE 57 10 0 14 -195378
+-33289 0;
 #X floatatom -62 -58 6 0 0 0 - - -;
-#X obj -61 -77 hsl 128 15 80 200 0 0 empty empty empty -2 -8 0 10 -203904
--1 -1 3713 1;
+#X obj -61 -77 hsl 128 15 80 200 0 0 empty empty tempo 78 9 0 10 -203904
+-1 -1 3810 1;
 #X obj -20 -58 bng 15 250 50 0 empty tempo_click_bang empty 17 7 0
 10 -159808 -1 -1;
-#X obj 90 -51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 113 -51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 33 -53 metronome;
+#X text 55 -51 metronome;
 #X floatatom 0 -58 5 0 0 0 - - -;
-#X obj 169 344 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 169 344 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 194 300 0;
 #X msg 156 300 1;
@@ -174,8 +174,8 @@
 #X obj -67 214 *~ 6;
 #X obj -70 446 / 6;
 #X text -29 140 6 is the real duration of 16 beqts with 80 bpm;
-#X obj 93 -83 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 99 -83 tgl 30 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
+;
 #X msg 165 -128 0;
 #X msg 86 -128 1;
 #X obj 147 13 sel 1;
@@ -199,6 +199,34 @@
 #X obj -183 -51 i 0;
 #X obj 211 64 s reset_tempo;
 #X obj 154 -276 route bang float;
+#X floatatom 71 533 5 0 0 0 - - -;
+#N canvas 637 239 484 374 tempo_2bar 0;
+#X obj 97 -1079 i 0;
+#X obj 99 -1027 % 8;
+#X obj 106 -1158 i 0;
+#X obj 125 -1121 change;
+#X obj 83 -1120 + 1;
+#X floatatom 31 -994 5 0 0 0 - - -;
+#X obj 106 -1220 inlet;
+#X obj 76 -992 outlet;
+#X obj 98 -1056 + 0;
+#X obj 106 -1190 * 8;
+#X obj 135 -994 s tempo_2bar;
+#X connect 0 0 8 0;
+#X connect 1 0 5 0;
+#X connect 1 0 7 0;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 1;
+#X connect 6 0 9 0;
+#X connect 8 0 1 0;
+#X connect 9 0 2 0;
+#X restore 72 501 pd tempo_2bar;
+#X floatatom 50 -61 5 0 0 0 - - -;
+#X obj 49 29 s transpose;
+#X obj 52 -4 * 10;
 #X connect 0 0 1 0;
 #X connect 1 0 52 0;
 #X connect 2 0 18 0;
@@ -226,6 +254,7 @@
 #X connect 28 0 31 0;
 #X connect 29 0 1 1;
 #X connect 30 0 29 0;
+#X connect 31 0 33 0;
 #X connect 31 1 32 0;
 #X connect 32 0 40 0;
 #X connect 34 0 69 0;
@@ -248,6 +277,7 @@
 #X connect 52 0 5 0;
 #X connect 53 0 17 0;
 #X connect 53 0 21 0;
+#X connect 53 0 76 0;
 #X connect 55 0 58 0;
 #X connect 56 0 55 0;
 #X connect 57 0 55 0;
@@ -256,7 +286,7 @@
 #X connect 59 0 60 0;
 #X connect 60 0 61 0;
 #X connect 61 0 62 0;
-#X connect 62 0 31 0;
+#X connect 62 0 32 0;
 #X connect 63 0 74 0;
 #X connect 64 0 66 0;
 #X connect 65 0 55 0;
@@ -266,4 +296,7 @@
 #X connect 72 0 6 0;
 #X connect 74 0 65 0;
 #X connect 74 1 64 0;
+#X connect 76 0 75 0;
+#X connect 77 0 79 0;
+#X connect 79 0 78 0;
 #X coords 0 -1 1 1 202 68 2 -70 -100;
