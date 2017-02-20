@@ -1,5 +1,5 @@
 #N canvas 234 388 800 363 10;
-#X obj 101 101 cnv 15 135 60 empty empty CLAVIER 20 12 0 14 -210924
+#X obj 101 101 cnv 15 135 55 empty empty CLAVIER 20 12 0 14 -210924
 -1 0;
 #X obj 113 230 outlet;
 #X obj 71 230 outlet;
@@ -16,14 +16,14 @@
 #X obj 212 -44 i 0;
 #X obj 237 -44 i 0;
 #X obj 261 -44 i 0;
-#X obj 101 143 tgl 15 0 empty empty a 4 7 0 10 -204786 -1 -1 0 1;
-#X obj 118 143 tgl 15 0 empty empty z 4 7 0 10 -204786 -1 -1 0 1;
-#X obj 135 143 tgl 15 0 empty empty e 4 7 0 10 -204786 -1 -1 0 1;
-#X obj 152 143 tgl 15 0 empty empty r 4 7 0 10 -204786 -1 -1 0 1;
-#X obj 169 143 tgl 15 0 empty empty t 4 7 0 10 -204786 -1 -1 0 1;
-#X obj 186 143 tgl 15 0 empty empty y 4 7 0 10 -204786 -1 -1 0 1;
-#X obj 204 143 tgl 15 0 empty empty u 4 7 0 10 -204786 -1 -1 0 1;
-#X obj 222 143 tgl 15 0 empty empty i 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 101 142 tgl 15 0 empty empty a 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 118 142 tgl 15 0 empty empty z 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 135 142 tgl 15 0 empty empty e 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 152 142 tgl 15 0 empty empty r 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 169 142 tgl 15 0 empty empty t 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 186 142 tgl 15 0 empty empty y 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 204 142 tgl 15 0 empty empty u 4 7 0 10 -204786 -1 -1 0 1;
+#X obj 222 142 tgl 15 0 empty empty i 4 7 0 10 -204786 -1 -1 0 1;
 #X obj 371 231 outlet;
 #X obj 258 -287 keyname;
 #X obj 254 -194 pack s f;
@@ -78,4 +78,4 @@
 #X connect 36 0 3 0;
 #X connect 37 0 1 0;
 #X connect 38 0 2 0;
-#X coords 0 -1 1 1 137 64 1 100 100;
+#X coords 0 -1 1 1 137 60 1 100 100;

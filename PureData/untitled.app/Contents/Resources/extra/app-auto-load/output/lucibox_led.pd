@@ -1,0 +1,57 @@
+#N canvas 306 85 998 474 10;
+#X obj 48 297 s arduinoIN;
+#X obj 29 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 17 221 pack 13 255;
+#X obj 212 111 t b f;
+#X obj 212 177 i 0;
+#X obj 266 111 t b f;
+#X obj 425 111 t b f;
+#X obj 478 112 t b f;
+#X obj 266 179 i 1;
+#X obj 448 172 i 4;
+#X obj 523 173 i 5;
+#X obj 201 212 pack 0 0;
+#X obj 265 212 pack 0 0;
+#X obj 455 212 pack 0 0;
+#X obj 517 212 pack 0 0;
+#X obj 205 -157 inlet;
+#X obj 246 -157 inlet;
+#X obj 394 -110 inlet;
+#X obj 435 -110 inlet;
+#X obj 261 -47 cnv 15 109 73 empty empty LUCIBOX 20 60 0 14 -184827
+-1 0;
+#X obj 354 -45 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -258113
+-1 -1 0 1;
+#X obj 326 -45 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -258113
+-1 -1 0 1;
+#X obj 260 -46 tgl 19 0 empty empty D7 3 9 0 10 -204786 -1 -1 0 255
+;
+#X obj 288 -46 tgl 19 0 empty empty D8 3 9 0 10 -204786 -1 -1 0 1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 1 11 1;
+#X connect 4 0 11 0;
+#X connect 5 0 8 0;
+#X connect 5 1 12 1;
+#X connect 6 0 9 0;
+#X connect 6 1 13 1;
+#X connect 7 0 10 0;
+#X connect 7 1 14 1;
+#X connect 8 0 12 0;
+#X connect 9 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 22 0;
+#X connect 16 0 23 0;
+#X connect 17 0 21 0;
+#X connect 18 0 20 0;
+#X connect 20 0 7 0;
+#X connect 21 0 6 0;
+#X connect 22 0 3 0;
+#X connect 23 0 5 0;
+#X coords 0 -1 1 1 110 80 2 260 -50;

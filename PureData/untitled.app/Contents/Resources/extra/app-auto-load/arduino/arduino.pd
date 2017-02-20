@@ -1,0 +1,48 @@
+#N canvas 391 114 736 400 12;
+#X obj 500 100 cnv 15 230 67 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X msg 463 258 ports;
+#X obj 466 213 loadbang;
+#X obj 451 347 route ports open;
+#X obj 504 392 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 546 213 close;
+#X obj 351 412 unpack f s;
+#X obj 576 108 bng 15 250 50 0 empty empty Open 17 7 0 10 -4034 -1
+-1;
+#X obj 133 382 comport 0 57600;
+#X obj 280 553 print comport;
+#X obj 48 554 s arduinoOUT;
+#X text 511 110 Arduino;
+#X obj 621 140 tgl 15 0 empty empty Connecté 17 7 0 10 -262144 -1
+-1 1 1;
+#X msg 417 211 1;
+#X msg 538 257 0;
+#X obj 637 108 bng 15 250 50 0 empty empty Close 17 7 0 10 -258113
+-1 -1;
+#X msg 99 299 \$1 \$2 13;
+#X obj 84 239 r arduinoIN;
+#X msg 208 275 devices;
+#X msg 346 262 open \$2;
+#X text 561 130;
+#X text 625 131;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 3 1 4 0;
+#X connect 5 0 8 0;
+#X connect 5 0 14 0;
+#X connect 6 0 19 0;
+#X connect 7 0 1 0;
+#X connect 8 0 10 0;
+#X connect 8 1 3 0;
+#X connect 8 1 9 0;
+#X connect 13 0 12 0;
+#X connect 14 0 12 0;
+#X connect 15 0 5 0;
+#X connect 16 0 8 0;
+#X connect 17 0 16 0;
+#X connect 18 0 8 0;
+#X connect 19 0 8 0;
+#X connect 19 0 13 0;
+#X coords 0 -1 1 1 230 68 1 500 100;

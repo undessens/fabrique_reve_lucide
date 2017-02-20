@@ -1,0 +1,35 @@
+#N canvas 147 188 1214 484 10;
+#X obj 100 104 cnv 15 164 60 empty empty SORTIE_AUDIO 30 25 0 14 -184827
+-1 0;
+#X obj 102 120 vsl 15 40 0 1 0 0 empty empty 1 4 20 0 10 -262144 -1
+-1 3783 1;
+#X floatatom 43 172 5 0 0 0 - - -;
+#X obj 28 285 *~;
+#X obj 27 25 inlet~;
+#X obj 85 402 dac~;
+#X obj 84 359 *~;
+#X msg 287 331 0.95;
+#X obj 303 308 loadbang;
+#X obj 100 104 cnv 12 40 12 empty empty son 3 6 0 14 -4160 -1 0;
+#X obj 393 38 ../save/save-int-separate audio_out1;
+#X obj 392 -11 r audio_out1_in;
+#X obj 392 77 s audio_out1_out;
+#X obj 393 58 / 100;
+#X obj 392 15 * 100;
+#X obj 102 25 r audio_out1_out;
+#X obj 102 288 s audio_out1_in;
+#X connect 1 0 2 0;
+#X connect 1 0 16 0;
+#X connect 2 0 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 1;
+#X connect 6 0 5 0;
+#X connect 7 0 6 1;
+#X connect 8 0 7 0;
+#X connect 10 0 13 0;
+#X connect 11 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 10 0;
+#X connect 15 0 1 0;
+#X coords 0 -1 1 1 165 65 2 100 100;

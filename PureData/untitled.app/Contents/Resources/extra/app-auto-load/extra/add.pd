@@ -1,0 +1,44 @@
+#N canvas 456 130 721 548 10;
+#X obj 152 270 symbol \$1;
+#X obj 100 100 hradio 70 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 287 335 pack s f f f;
+#X obj 246 267 random 10000;
+#X obj 273 207 t b b b b;
+#X obj 401 263 + 368;
+#X obj 326 261 + 149;
+#X obj 323 240 random 366;
+#X obj 401 239 random 555;
+#X obj 101 101 cnv 15 138 68 empty empty AJOUTER 10 25 0 24 -245440
+-66577 0;
+#X obj 208 141 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 58 399 symbol \$2;
+#X msg 58 426 \; pd-\$1 vis 0;
+#X msg 362 405 \; pd-main.pd obj \$4 \$3 \$1 \$2;
+#X msg 272 409 \; \$2-load bang;
+#X obj 232 362 t b b l l;
+#X msg 198 405 \; editMode 1;
+#X text 417 446 add object;
+#X text 270 444 fake loadbang exclusive to this object;
+#X text 199 444 activate EditMode;
+#X text 59 466 close pop-up;
+#X connect 0 0 2 0;
+#X connect 1 0 10 0;
+#X connect 2 0 15 0;
+#X connect 3 0 2 1;
+#X connect 4 0 0 0;
+#X connect 4 1 3 0;
+#X connect 4 2 7 0;
+#X connect 4 3 8 0;
+#X connect 5 0 2 3;
+#X connect 6 0 2 2;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 10 0 4 0;
+#X connect 11 0 12 0;
+#X connect 15 0 11 0;
+#X connect 15 1 16 0;
+#X connect 15 2 14 0;
+#X connect 15 3 13 0;
+#X coords 0 -1 1 1 140 70 2 100 100;

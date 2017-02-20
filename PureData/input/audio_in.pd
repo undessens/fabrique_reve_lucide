@@ -4,20 +4,17 @@
 #X obj 30 80 adc~;
 #X obj 28 341 outlet~;
 #X obj 104 269 env~ 8162;
-#X obj 101 101 cnv 15 130 60 empty empty AUDIO 10 9 0 14 -210924 -1
+#X obj 101 101 cnv 15 130 55 empty empty AUDIO 10 9 0 14 -210924 -1
 0;
-#X obj 195 117 vsl 15 40 0 100 0 0 empty empty volume 0 -9 0 10 -262144
--1 -1 1550 1;
-#X obj 165 117 vsl 15 40 0 1.5 0 0 empty empty gain 0 -9 0 10 -262144
--1 -1 2782 1;
+#X obj 195 114 vsl 15 40 0 100 0 0 empty empty volume 0 -9 0 10 -262144
+-1 -1 2122 1;
+#X obj 165 114 vsl 15 40 0 1.5 0 0 empty empty gain 0 -9 0 10 -262144
+-1 -1 2912 1;
 #X obj 107 22 loadbang;
 #X msg 50 173 \; pd dsp \$1;
 #X obj 107 122 tgl 10 0 empty empty DSP 11 5 0 8 -262144 -1 -1 1 1
 ;
 #X msg 107 61 1;
-#X obj 102 149 cnv 12 40 12 empty empty empty 20 12 0 14 -4160 -66577
-0;
-#X text 108 145 son;
 #X obj 412 122 ../save/save-int-separate audio_in;
 #X obj 412 209 s save_audio_in;
 #X obj 412 176 / 100;
@@ -25,23 +22,24 @@
 #X obj 165 213 s save_audio_in_in;
 #X obj 412 70 r save_audio_in_in;
 #X obj 412 95 * 100;
-#X floatatom 211 115 3 0 0 0 - - -;
+#X floatatom 211 112 3 0 0 0 - - -;
 #X obj 412 151 f 0;
+#X obj 101 144 cnv 12 40 12 empty empty son 10 5 0 12 -4160 -1 0;
 #X connect 0 0 1 1;
 #X connect 1 0 3 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
-#X connect 4 0 21 0;
+#X connect 4 0 19 0;
 #X connect 7 0 0 0;
-#X connect 7 0 18 0;
+#X connect 7 0 16 0;
 #X connect 8 0 11 0;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
-#X connect 14 0 22 0;
-#X connect 16 0 15 0;
-#X connect 17 0 7 0;
-#X connect 19 0 20 0;
+#X connect 12 0 20 0;
+#X connect 14 0 13 0;
+#X connect 15 0 7 0;
+#X connect 17 0 18 0;
+#X connect 18 0 12 0;
 #X connect 20 0 14 0;
-#X connect 22 0 16 0;
-#X coords 0 -1 1 1 132 65 2 100 100;
+#X coords 0 -1 1 1 132 60 2 100 100;
