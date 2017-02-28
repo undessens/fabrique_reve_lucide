@@ -23,7 +23,7 @@
 #X obj -129 68 r~ to_master-son2;
 #X obj 103 9 r~ to_master-loop1;
 #X obj 88 31 r~ to_master-loop2;
-#X obj 75 51 r~ to_master-loop3;
+#X obj 75 52 r~ to_master-loop3;
 #X obj 59 74 r~ to_master-loop4;
 #X obj 209 121 r~ to_master-effet;
 #X obj 209 164 r~ to_master-looper;

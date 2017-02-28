@@ -16,8 +16,8 @@
 #X obj 2 154 extra/add input/audio_in entree;
 #X obj 3 238 extra/add input/clavier_midi entree;
 #X obj -222 -2 input/arduino_in;
-#X obj -132 244 input/clavier_midi;
 #X obj -177 162 input/audio_in;
+#X obj -132 244 input/clavier_midi;
 #X restore 64 54 pd entree;
 #N canvas 431 76 399 483 sortie 0;
 #X obj 11 107 output/audio_out3;
@@ -243,22 +243,22 @@
 #N canvas 553 50 450 300 midi-input 0;
 #X obj 101 37 route 60 63 65 66 67 70 72 75;
 #X obj 99 -21 inlet;
-#X obj 101 101 tgl 25 0 empty empty s 10 11 0 12 -1375 -262144 -262144
+#X obj 101 101 tgl 25 0 empty empty f 10 11 0 12 -1375 -262144 -262144
 0 1;
 #X obj 13 76 s to_midi1;
-#X obj 126 101 tgl 25 0 empty empty d 10 11 0 12 -1375 -262144 -262144
+#X obj 126 101 tgl 25 0 empty empty g 10 11 0 12 -1375 -262144 -262144
 0 1;
-#X obj 151 101 tgl 25 0 empty empty f 10 11 0 12 -1375 -262144 -262144
+#X obj 151 101 tgl 25 0 empty empty h 10 11 0 12 -1375 -262144 -262144
 0 1;
-#X obj 176 101 tgl 25 0 empty empty g 10 11 0 12 -1375 -262144 -262144
+#X obj 176 101 tgl 25 0 empty empty j 10 11 0 12 -1375 -262144 -262144
 0 1;
-#X obj 101 126 tgl 25 0 empty empty h 10 11 0 12 -1375 -262144 -262144
+#X obj 101 126 tgl 25 0 empty empty c 10 11 0 12 -1375 -262144 -262144
 0 1;
-#X obj 126 126 tgl 25 0 empty empty j 10 11 0 12 -1375 -262144 -262144
+#X obj 126 126 tgl 25 0 empty empty v 10 11 0 12 -1375 -262144 -262144
 0 1;
-#X obj 151 126 tgl 25 0 empty empty k 10 11 0 12 -1375 -262144 -262144
+#X obj 151 126 tgl 25 0 empty empty b 10 11 0 12 -1375 -262144 -262144
 0 1;
-#X obj 176 126 tgl 25 0 empty empty l 10 11 0 12 -1375 -262144 -262144
+#X obj 176 126 tgl 25 0 empty empty n 10 11 0 12 -1375 -262144 -262144
 0 1;
 #X connect 0 0 2 0;
 #X connect 0 1 4 0;
@@ -336,6 +336,7 @@
 #X connect 44 0 45 0;
 #X coords 0 -1 1 1 855 100 1 110 110;
 #X restore 340 -10 pd main-input;
-#X obj 766 93 looping/main_read_loop 2;
-#X obj 632 93 looping/main_read_loop 1;
+#X obj 772 93 looping/main_read_loop 1;
 #X obj 239 92 sampling/read_8sample 1;
+#X obj 906 93 looping/main_read_loop 2;
+#X obj 638 93 looping/main_read_loop 3;
