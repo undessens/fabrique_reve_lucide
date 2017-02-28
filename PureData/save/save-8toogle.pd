@@ -1,4 +1,4 @@
-#N canvas 2070 208 794 683 10;
+#N canvas 494 87 794 683 10;
 #X obj 90 -217 loadbang;
 #X obj 90 -195 t b b b b;
 #X obj 177 -138 symbol \$1;
@@ -13,7 +13,7 @@
 #X obj -33 319 pack s;
 #X obj -83 -93 inlet;
 #X obj -149 279 outlet;
-#X obj 121 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 121 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 104 11 unpack f f f f f f f f;
 #X obj 119 48 i 0;
@@ -23,19 +23,19 @@
 #X obj 224 48 i 0;
 #X obj 249 48 i 0;
 #X obj 274 48 i 0;
-#X obj 132 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 134 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 143 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 147 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 154 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 160 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 165 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 173 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 176 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 186 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 187 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 199 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 198 121 tgl 11 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 212 121 tgl 13 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 118 242 t b b l b;
 #X obj 24 161 t b f;
@@ -50,6 +50,10 @@
 #X msg 2 351 write ../preset/toogle8-\$1.txt;
 #X obj 190 310 prepend add;
 #X obj 113 207 pack 0 0 0 0 0 0 0 0;
+#X obj 348 -17 pack 0 0 0 0 0 0 0 0;
+#X obj 346 -59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 342 -162 inlet;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 1 1 3 0;
@@ -112,4 +116,7 @@
 #X connect 41 0 9 0;
 #X connect 42 0 30 0;
 #X connect 42 0 13 0;
-#X coords 0 -1 1 1 90 13 2 120 120;
+#X connect 43 0 15 0;
+#X connect 44 0 43 0;
+#X connect 45 0 44 0;
+#X coords 0 -1 1 1 105 15 2 120 120;

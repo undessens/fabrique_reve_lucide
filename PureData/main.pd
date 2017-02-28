@@ -1,4 +1,4 @@
-#N canvas 142 23 1440 747 12;
+#N canvas 61 68 1440 747 12;
 #X obj 337 23 cnv 15 880 65 empty empty ENTREES 20 20 0 30 -126994
 -262144 0;
 #X obj 93 23 cnv 15 240 650 empty empty empty 20 12 0 14 -66577 -66577
@@ -10,21 +10,16 @@
 #X obj 97 138 arduino/arduino_main;
 #X obj 634 585 output/audio_out;
 #X obj 849 586 output/arduino_out;
-#X obj 1009 29 input/arduino_in;
-#X obj 873 30 input/clavier_midi 862;
 #X obj 534 30 input/audio_in 1040;
-#X obj 714 30 input/clavier 2335;
 #N canvas 646 286 450 300 sub 0;
 #N canvas 388 231 400 407 entree 0;
 #X obj -172 339 extra/close entree;
 #X obj 1 -3 extra/add input/arduino_in entree;
-#X obj 2 77 extra/add input/clavier entree;
 #X obj 2 154 extra/add input/audio_in entree;
 #X obj 3 238 extra/add input/clavier_midi entree;
 #X obj -222 -2 input/arduino_in;
 #X obj -132 244 input/clavier_midi;
 #X obj -177 162 input/audio_in;
-#X obj -149 81 input/clavier;
 #X restore 64 54 pd entree;
 #N canvas 431 76 399 483 sortie 0;
 #X obj 10 7 output/audio_out;
@@ -45,7 +40,7 @@
 #X restore 64 186 pd transport;
 #X obj 200 100 cnv 15 40 20 empty empty admin 3 12 0 12 -66577 -191407
 0;
-#N canvas 140 141 436 522 son 0;
+#N canvas 140 141 436 522 son 1;
 #X obj 32 11 sampling/read_sample 1;
 #X obj 39 447 extra/close son;
 #X obj 33 175 sampling/read_8sample 0;
@@ -81,14 +76,15 @@
 #X text 233 84 version 1;
 #X obj 139 401 extra/open_sub boucle;
 #X obj 139 360 extra/open_sub son;
-#X obj 419 177 sampling/read_8sample 344;
-#X obj 633 232 looping/read_loop 8412;
+#X obj 576 176 looping/read_loop 8412;
 #X obj 841 222 looping/read_loop 9649;
 #X obj 1017 222 looping/read_loop 411;
-#X connect 8 0 22 0;
-#X connect 10 0 23 0;
-#X connect 10 1 17 1;
-#X connect 22 0 5 0;
-#X connect 23 0 5 0;
-#X connect 24 0 5 0;
-#X connect 25 0 5 0;
+#X obj 949 35 input/arduino_in 7436;
+#X obj 744 34 input/clavier_midi 4864;
+#X obj 439 221 sampling/read_sample 7362;
+#X obj 471 464 audio_effect/filtering 7841;
+#X connect 20 0 25 0;
+#X connect 22 0 20 0;
+#X connect 22 1 21 0;
+#X connect 22 2 19 0;
+#X connect 24 0 25 0;

@@ -1,0 +1,18 @@
+#N canvas 663 246 534 345 10;
+#X obj 70 220 outlet;
+#X obj 273 147 s \$0-out;
+#X obj 275 3 r \$0-in;
+#X obj 101 101 cnv 12 80 14 empty empty ->midi 2 6 1 12 -1375 -262144
+0;
+#X floatatom 155 100 4 1 2 0 - #0-out #0-in;
+#X obj 32 116 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 274 113 ../save/save-int-separate midireceiv-\$1;
+#X obj 197 46 route 1;
+#X text 110 50 no route until sereral midi inuput;
+#X obj 73 6 r to_midi1;
+#X connect 2 0 6 0;
+#X connect 2 0 7 1;
+#X connect 6 0 1 0;
+#X connect 9 0 0 0;
+#X coords 0 -1 1 1 82 16 2 100 100;

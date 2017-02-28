@@ -1,20 +1,20 @@
-#N canvas 331 23 688 780 10;
-#X floatatom -65 57 5 0 0 0 - - -;
-#X obj -65 128 phasor~;
+#N canvas 37 23 780 782 10;
+#X floatatom -50 84 5 0 0 0 - - -;
+#X obj -50 155 phasor~;
 #X obj -70 315 snapshot~;
 #X obj 14 280 metro 2;
 #X msg 104 235 stop;
 #X obj -168 315 s~ tempoPhaser;
-#X obj -78 -22 * 0.01;
-#X obj -155 26 s precession;
-#X obj 86 -153 r tempoGoIn;
-#X obj 165 -154 r tempoStopIn;
-#X obj -26 6 r fix-tempo;
+#X obj -63 5 * 0.01;
+#X obj -140 53 s precession;
+#X obj 86 -205 r tempoGoIn;
+#X obj 165 -206 r tempoStopIn;
+#X obj -11 33 r fix-tempo;
 #X obj -22 184 r fix-tempo;
 #X obj 104 207 r tempoStopOut;
 #X obj 14 207 r tempoGoOut;
-#X obj 174 37 s tempoStopOut;
-#X obj 97 -26 s metronomeOn;
+#X obj 189 64 s tempoStopOut;
+#X obj 127 0 s metronomeOn;
 #N canvas 917 32 476 376 metronome 0;
 #X obj -460 -90 i 0;
 #X obj -455 124 dac~;
@@ -84,7 +84,7 @@
 #X connect 9 0 0 1;
 #X connect 10 0 0 0;
 #X connect 11 0 5 1;
-#X restore 200 -57 pd metronome;
+#X restore 279 -60 pd metronome;
 #N canvas 763 334 424 344 tempo_click 0;
 #X floatatom -19 73 5 0 0 0 - - -;
 #X obj -19 -37 i 0;
@@ -138,67 +138,61 @@
 #X restore -20 502 pd tempo_bar;
 #X floatatom -21 535 5 0 0 0 - - -;
 #X obj -138 -76 * 0.8;
-#X obj -274 -136 ../save/save-int-separate tempoValue;
-#X obj -81 -299 r tempoValue;
-#X obj -81 -272 / 1000;
-#X obj -81 -241 pow -1;
-#X obj -81 -215 * 60;
-#X msg 122 104 0;
-#X obj 122 64 r reset_tempo;
-#X obj -81 -193 t b f;
-#X obj -54 -152 / 0.8;
-#X obj -184 -163 s reset_tempo;
-#X obj 123 38 t b b;
-#X msg -220 61 0;
-#X obj -220 0 r tempoStopOut;
-#X obj 0 -145 r tempo_bar;
-#X obj -69 -95 cnv 15 200 60 empty empty LECTURE 57 10 0 14 -195378
+#X obj -274 -188 ../save/save-int-separate tempoValue;
+#X obj -81 -351 r tempoValue;
+#X obj -81 -324 / 1000;
+#X obj -81 -293 pow -1;
+#X obj -81 -267 * 60;
+#X msg 137 131 0;
+#X obj 137 91 r reset_tempo;
+#X obj -81 -245 t b f;
+#X obj -54 -204 / 0.8;
+#X obj -184 -215 s reset_tempo;
+#X obj 138 65 t b b;
+#X msg -205 88 0;
+#X obj -205 27 r tempoStopOut;
+#X obj 0 -197 r tempo_bar;
+#X obj -69 -109 cnv 15 290 90 empty empty empty 57 10 0 14 -253822
 -33289 0;
-#X floatatom -62 -58 6 0 0 0 - - -;
-#X obj -61 -77 hsl 128 15 80 200 0 0 empty empty tempo 78 9 0 10 -203904
--1 -1 3810 1;
-#X obj -20 -58 bng 15 250 50 0 empty tempo_click_bang empty 17 7 0
+#X floatatom -66 -38 6 0 0 0 - - -;
+#X obj -63 -88 hsl 128 25 80 200 0 0 empty empty empty 78 9 0 10 -238739
+-1 -1 2600 0;
+#X obj -25 -37 bng 15 250 50 0 empty tempo_click_bang empty 17 7 0
 10 -159808 -1 -1;
-#X obj 113 -51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 127 -38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 55 -51 metronome;
-#X floatatom 0 -58 5 0 0 0 - - -;
-#X obj 169 344 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 68 -40 metronome;
+#X floatatom -7 -38 5 0 0 0 - - -;
+#X obj 169 344 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 194 300 0;
 #X msg 156 300 1;
 #X obj 156 387 i 0;
 #X obj 45 342 r isTempoPlayingIn;
 #X obj 156 451 s isTempoPlayingOut;
-#X obj -65 29 / 6;
+#X obj -50 56 / 6;
 #X obj -67 214 *~ 6;
 #X obj -70 446 / 6;
-#X text -29 140 6 is the real duration of 16 beqts with 80 bpm;
-#X obj 99 -83 tgl 30 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
-;
-#X msg 165 -128 0;
-#X msg 86 -128 1;
-#X obj 147 13 sel 1;
-#X obj -159 -299 inlet;
-#X obj -159 -273 / 255;
-#X obj -159 -246 * 160;
-#X obj -159 -219 + 40;
-#X obj 154 -298 inlet;
-#X obj 247 -250 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X text -14 167 6 is the real duration of 16 beqts with 80 bpm;
+#X obj 172 -101 tgl 45 0 empty empty go! 17 22 0 10 -14109 -1 -262144
+1 1;
+#X msg 165 -180 0;
+#X msg 86 -180 1;
+#X obj 162 40 sel 1;
+#X obj -159 -325 / 255;
+#X obj -159 -298 * 160;
+#X obj -159 -271 + 40;
+#X obj 247 -302 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 200 -191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 200 -243 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 247 -229 sel 0;
-#X obj 61 -96 cnv 12 70 12 empty empty play/stop 4 6 0 12 -204786 -1
-0;
-#X obj -69 -96 cnv 12 46 12 empty empty tempo 2 6 0 12 -249508 -1 0
-;
-#X obj -14 94 s tempoGoOutBang;
+#X obj 247 -281 sel 0;
+#X obj 1 121 s tempoGoOutBang;
 #X obj -283 -96 r tempoGoOutBang;
-#X obj -264 -27 s tempoGoOut;
+#X obj -289 0 s tempoGoOut;
 #X obj -183 -51 i 0;
-#X obj 211 64 s reset_tempo;
-#X obj 154 -276 route bang float;
+#X obj 226 91 s reset_tempo;
+#X obj 154 -328 route bang float;
 #X floatatom 71 533 5 0 0 0 - - -;
 #N canvas 637 239 484 374 tempo_2bar 0;
 #X obj 97 -1079 i 0;
@@ -224,9 +218,21 @@
 #X connect 8 0 1 0;
 #X connect 9 0 2 0;
 #X restore 72 501 pd tempo_2bar;
-#X floatatom 50 -61 5 0 0 0 - - -;
-#X obj 49 29 s transpose;
-#X obj 52 -4 * 10;
+#X floatatom 31 -38 5 0 0 0 - - -;
+#X obj 64 56 s transpose;
+#X obj 67 23 * 10;
+#X obj -54 -106 cnv 15 100 16 empty empty TEMPO 0 7 0 16 -253822 -33289
+0;
+#X obj 94 -106 cnv 15 70 16 empty empty LECTURE 0 7 0 16 -253822 -33289
+0;
+#X obj -63 -61 ../extra/analog_receive tenpo;
+#X obj -206 -1 s \$0-tempoFromAnalog;
+#X obj -223 -351 r \$0-tempoFromAnalog;
+#X obj 88 -88 ../extra/digital_receive playstop;
+#X obj 255 -16 s \$0-playFromDigital;
+#X obj 152 -353 r \$0-playFromDigital;
+#X obj 192 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 1 0;
 #X connect 1 0 52 0;
 #X connect 2 0 18 0;
@@ -254,18 +260,19 @@
 #X connect 28 0 31 0;
 #X connect 29 0 1 1;
 #X connect 30 0 29 0;
+#X connect 30 0 84 0;
 #X connect 31 0 33 0;
 #X connect 31 1 32 0;
 #X connect 32 0 40 0;
-#X connect 34 0 69 0;
-#X connect 34 1 73 0;
+#X connect 34 0 65 0;
+#X connect 34 1 69 0;
 #X connect 35 0 1 0;
 #X connect 36 0 35 0;
 #X connect 37 0 44 0;
 #X connect 40 0 23 0;
 #X connect 40 0 6 0;
+#X connect 40 0 68 1;
 #X connect 40 0 24 0;
-#X connect 40 0 72 1;
 #X connect 42 0 15 0;
 #X connect 45 0 48 1;
 #X connect 46 0 45 0;
@@ -277,7 +284,7 @@
 #X connect 52 0 5 0;
 #X connect 53 0 17 0;
 #X connect 53 0 21 0;
-#X connect 53 0 76 0;
+#X connect 53 0 72 0;
 #X connect 55 0 58 0;
 #X connect 56 0 55 0;
 #X connect 57 0 55 0;
@@ -285,18 +292,20 @@
 #X connect 58 1 14 0;
 #X connect 59 0 60 0;
 #X connect 60 0 61 0;
-#X connect 61 0 62 0;
-#X connect 62 0 32 0;
-#X connect 63 0 74 0;
-#X connect 64 0 66 0;
-#X connect 65 0 55 0;
-#X connect 66 1 65 0;
-#X connect 70 0 72 0;
+#X connect 61 0 32 0;
+#X connect 62 0 64 0;
+#X connect 63 0 55 0;
+#X connect 64 1 63 0;
+#X connect 66 0 68 0;
+#X connect 68 0 67 0;
+#X connect 68 0 6 0;
+#X connect 70 0 63 0;
+#X connect 70 1 62 0;
 #X connect 72 0 71 0;
-#X connect 72 0 6 0;
-#X connect 74 0 65 0;
-#X connect 74 1 64 0;
-#X connect 76 0 75 0;
-#X connect 77 0 79 0;
-#X connect 79 0 78 0;
-#X coords 0 -1 1 1 202 68 2 -70 -100;
+#X connect 73 0 75 0;
+#X connect 75 0 74 0;
+#X connect 78 0 79 0;
+#X connect 80 0 59 0;
+#X connect 81 0 82 0;
+#X connect 83 0 70 0;
+#X coords 0 -1 1 1 290 90 2 -70 -110;
