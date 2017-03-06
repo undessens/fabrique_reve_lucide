@@ -46,9 +46,9 @@
 #X obj 668 24 r tempo_click;
 #X obj 257 415 tabwrite~ \$0-simple_looper1;
 #X obj 669 403 tabplay~ \$0-simple_looper1;
-#X obj 44 283 tgl 15 0 empty \$0_contrainst enregistrement 17 7 0 10
--99865 -1 -1 1 1;
-#X floatatom 79 306 5 0 0 0 Taille #0_loop_size -;
+#X obj 45 287 tgl 25 0 empty \$0_contrainst enregistrement 29 15 0
+10 -99865 -1 -1 0 1;
+#X floatatom -70 340 5 0 0 0 Taille #0_loop_size -;
 #X obj 561 252 i 0;
 #X text 460 269 smth is already recorded;
 #X text 308 278 write 1st loop;
@@ -80,7 +80,7 @@
 #X obj -113 -61 s~ \$0-input;
 #X obj 291 369 r~ \$0-input;
 #X obj 540 526 r~ \$0-input;
-#X obj 65 332 vsl 15 30 0 120 0 0 \$0-loopDry empty direct -9 38 0
+#X obj -30 360 vsl 15 30 0 120 0 0 \$0-loopDry empty direct -9 38 0
 10 -262144 -1 -1 0 1;
 #X obj -113 -89 r~ input_audio1;
 #X obj 502 582 tabwrite~ \$0-simple_looper1;
@@ -223,7 +223,7 @@
 #X restore 378 209 pd switch-1st-time;
 #X obj 378 180 r \$0-fromRec;
 #X obj 32 88 tgl 40 0 \$0-fromRec empty rec 12 20 0 10 -1 -262144 -262144
-0 1;
+1 1;
 #X obj 40 61 cnv 15 40 16 empty empty DE 6 6 0 20 -170864 -66577 0
 ;
 #X obj 70 61 cnv 15 80 16 empty empty BOUCLE 6 6 0 20 -170864 -66577
@@ -248,14 +248,14 @@
 0;
 #N canvas 555 183 693 455 volume-effect 0;
 #X obj 104 115 vsl 50 100 0 200 0 0 empty empty volume 5 12 0 10 -86735
--262144 -262144 7400 1;
+-262144 -262144 2970 1;
 #X obj 104 233 s \$0-volume;
 #X obj 165 165 vsl 14 50 0 120 0 0 empty empty 1 5 14 0 10 -86735 -262144
--262144 0 1;
+-262144 572 1;
 #X obj 164 148 cnv 12 48 12 empty empty Effets 4 6 0 12 -33289 -262144
 0;
 #X obj 181 165 vsl 14 50 0 120 0 0 empty empty 2 5 14 0 10 -86735 -262144
--262144 4200 1;
+-262144 1878 1;
 #X obj 197 165 vsl 14 50 0 120 0 0 empty empty 3 5 14 0 10 -86735 -262144
 -262144 0 1;
 #X obj 165 254 s \$0-effect1;

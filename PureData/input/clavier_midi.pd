@@ -9,14 +9,14 @@
 #X obj 212 -44 i 0;
 #X obj 237 -44 i 0;
 #X obj 261 -44 i 0;
-#X obj 122 126 tgl 12 0 empty empty f 4 7 0 10 -228856 -1 -1 0 1;
-#X obj 134 126 tgl 12 0 empty empty g 4 7 0 10 -228856 -1 -1 0 1;
-#X obj 146 126 tgl 12 0 empty empty h 4 7 0 10 -228856 -1 -1 0 1;
-#X obj 158 126 tgl 12 0 empty empty i 4 7 0 10 -228856 -1 -1 0 1;
-#X obj 170 126 tgl 12 0 empty empty c 4 7 0 10 -228856 -1 -1 0 1;
-#X obj 181 126 tgl 12 0 empty empty v 4 7 0 10 -228856 -1 -1 0 1;
-#X obj 193 126 tgl 12 0 empty empty b 4 7 0 10 -228856 -1 -1 0 1;
-#X obj 205 126 tgl 12 0 empty empty n 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 122 126 tgl 12 0 empty empty u 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 134 126 tgl 12 0 empty empty i 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 146 126 tgl 12 0 empty empty o 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 158 126 tgl 12 0 empty empty p 4 5 0 10 -228856 -1 -1 0 1;
+#X obj 170 126 tgl 12 0 empty empty h 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 181 126 tgl 12 0 empty empty j 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 193 126 tgl 12 0 empty empty k 4 7 0 10 -228856 -1 -1 0 1;
+#X obj 205 126 tgl 12 0 empty empty l 4 7 0 10 -228856 -1 -1 0 1;
 #X obj 6 -289 keyname;
 #X obj 2 -196 pack s f;
 #X obj 5 -225 symbol;
@@ -44,7 +44,7 @@
 -1 -1;
 #X obj 101 144 cnv 12 40 12 empty empty midi 4 6 0 12 -204799 -1 0
 ;
-#X obj 1 -140 route f g h j c v b n;
+#X obj 1 -140 route u i o p h j k l;
 #X connect 1 0 9 0;
 #X connect 2 0 10 0;
 #X connect 3 0 11 0;

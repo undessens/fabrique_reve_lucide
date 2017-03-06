@@ -1,19 +1,29 @@
-#N canvas 627 271 589 375 10;
+#N canvas -13 190 589 375 10;
 #X obj 80 41 route 0;
 #X obj 70 220 outlet;
 #X obj 273 147 s \$0-out;
 #X obj 275 3 r \$0-in;
-#X obj 101 101 cnv 12 120 14 empty empty ->analogique 17 6 1 12 -86735
--262144 0;
-#X floatatom 196 100 4 0 8 0 - #0-out #0-in;
 #X obj 40 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 73 6 r analog-in;
 #X obj 270 113 ../save/save-int-separate analreceiv-\$1;
+#X floatatom 109 100 4 0 6 0 - #0-out #0-in;
+#X obj 101 101 cnv 12 33 14 empty empty -> 2 6 1 12 -86735 -262144
+0;
+#X obj 119 101 cnv 12 15 14 empty areceive_cnv_\$1 8 2 6 1 12 -86735
+-262144 0;
+#X msg 240 275 label \$1;
+#X obj 239 244 symbol \$1;
+#X obj 239 215 makefilename %d;
+#X obj 236 313 s areceive_cnv_\$1;
 #X connect 0 0 1 0;
-#X connect 0 0 6 0;
+#X connect 0 0 4 0;
 #X connect 3 0 0 1;
-#X connect 3 0 8 0;
-#X connect 7 0 0 0;
-#X connect 8 0 2 0;
-#X coords 0 -1 1 1 122 16 2 100 100;
+#X connect 3 0 6 0;
+#X connect 3 0 12 0;
+#X connect 5 0 0 0;
+#X connect 6 0 2 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X coords 0 -1 1 1 35 16 2 100 100;

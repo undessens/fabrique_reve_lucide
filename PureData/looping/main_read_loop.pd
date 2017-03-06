@@ -1,4 +1,4 @@
-#N canvas 370 74 1058 670 12;
+#N canvas 94 23 1112 728 12;
 #X obj 6 529 hip~ 5;
 #X obj 7 476 *~;
 #X obj 7 378 +~;
@@ -38,9 +38,9 @@
 #X obj 6 737 *~ 1;
 #X obj 460 531 r tempoGoOut;
 #X obj 355 531 r tempoStopOut;
-#X obj -249 31 cnv 15 130 498 empty empty BOUCLE 18 23 0 28 -244370
+#X obj -249 31 cnv 15 130 498 empty empty BOUCLE 2 23 0 28 -244370
 -66577 0;
-#X obj -202 82 cnv 12 82 12 empty empty Lecture 4 6 0 12 -33289 -262144
+#X obj -202 87 cnv 12 82 12 empty empty Lecture 4 6 0 12 -33289 -262144
 0;
 #X obj -242 156 hradio 14 1 0 8 loop_bank-\$1-out loop_bank-\$1-in
 banque_de_loop 0 -6 0 10 -33289 -262144 -262144 0;
@@ -126,11 +126,11 @@ banque_de_loop 0 -6 0 10 -33289 -262144 -262144 0;
 #X obj 6 -146 * 0.0352;
 #X obj 6 -114 i 0;
 #X obj 4 -81 s loop_num-\$1-in;
-#X obj -202 96 ../extra/digital_receive loop-\$1;
+#X obj -200 103 ../extra/digital_receive loop-\$1;
 #X obj -158 -179 r \$0-play;
 #X obj -327 193 s \$0-play;
 #X obj -242 223 vradio 23 1 0 8 loop_num-\$1-out loop_num-\$1-in empty
-0 -8 0 10 -66577 -262144 -1 5;
+0 -8 0 10 -66577 -262144 -1 4;
 #X obj -214 225 cnv 15 35 18 empty empty 1 12 9 0 14 -66577 -262144
 0;
 #X obj -214 249 cnv 15 35 18 empty empty 2 12 9 0 14 -66577 -262144
@@ -147,34 +147,37 @@ banque_de_loop 0 -6 0 10 -33289 -262144 -262144 0;
 0;
 #X obj -214 387 cnv 15 35 18 empty empty 8 12 9 0 14 -66577 -262144
 0;
-#X obj -245 199 ../extra/analog_receive \$1-numLoop;
+#X obj -161 192 ../extra/analog_receive \$1-numLoop;
 #X obj 6 -179 r \$0-loopNum;
 #X obj -366 248 s \$0-loopNum;
-#X obj -246 185 cnv 12 60 12 empty empty Numero 4 6 0 12 -33289 -262144
+#X obj -244 188 cnv 12 80 12 empty empty Numero 4 6 0 12 -33289 -262144
 0;
-#X obj -195 185 cnv 12 40 12 empty empty de 4 6 0 12 -33289 -262144
+#X obj -244 200 cnv 12 40 12 empty empty de 4 6 0 12 -33289 -262144
 0;
-#X obj -170 185 cnv 12 50 12 empty empty boucle 4 6 0 12 -33289 -262144
+#X obj -214 200 cnv 12 50 12 empty empty boucle 4 6 0 12 -33289 -262144
 0;
-#N canvas 652 274 693 455 volume-effect 0;
-#X obj 104 115 vsl 50 100 0 200 0 0 empty empty volume 5 12 0 10 -86735
--262144 -262144 8046 1;
+#N canvas 546 259 693 455 volume-effect 0;
+#X obj 111 115 vsl 50 100 0 200 0 0 empty empty volume 5 12 0 10 -86735
+-262144 -262144 7400 0;
 #X obj 104 233 s \$0-volume;
 #X obj 165 165 vsl 14 50 0 120 0 0 empty empty 1 5 14 0 10 -86735 -262144
--262144 0 1;
+-262144 1900 0;
 #X obj 164 148 cnv 12 48 12 empty empty Effets 4 6 0 12 -33289 -262144
 0;
 #X obj 181 165 vsl 14 50 0 120 0 0 empty empty 2 5 14 0 10 -86735 -262144
--262144 0 1;
+-262144 0 0;
 #X obj 197 165 vsl 14 50 0 120 0 0 empty empty 3 5 14 0 10 -86735 -262144
--262144 0 1;
+-262144 0 0;
 #X obj 165 254 s \$0-effect1;
-#X obj -5 50 ../save/save-int-separate \$1-loop_volume;
+#X obj -5 15 ../save/save-int-separate \$1-loop_volume;
 #X obj 291 47 ../save/save-int-separate \$1-loop-effect1;
 #X obj 240 86 ../save/save-int-separate \$1-loop-effect2;
 #X obj 240 111 ../save/save-int-separate \$1-loop-effect3;
 #X obj 181 276 s \$0-effect2;
 #X obj 197 298 s \$0-effect3;
+#X obj 102 115 vsl 8 100 0 127 0 0 empty empty empty 0 -9 0 10 -228856
+-159808 -1 0 1;
+#X obj -77 63 r \$0-vumetre;
 #X connect 0 0 1 0;
 #X connect 0 0 7 0;
 #X connect 2 0 6 0;
@@ -187,6 +190,7 @@ banque_de_loop 0 -6 0 10 -33289 -262144 -262144 0;
 #X connect 8 0 2 0;
 #X connect 9 0 4 0;
 #X connect 10 0 5 0;
+#X connect 14 0 13 0;
 #X coords 0 -1 1 1 120 120 2 100 100;
 #X restore -247 410 pd volume-effect;
 #N canvas 621 262 531 322 ouput-effect 0;
@@ -227,6 +231,12 @@ banque_de_loop 0 -6 0 10 -33289 -262144 -262144 0;
 #X msg 55 60 40;
 #X obj -463 105 r \$0-read_loopOUT;
 #X obj -461 163 sel 1;
+#X obj 145 813 s \$0-vumetre;
+#X obj -140 47 cnv 15 20 20 empty empty \$1 4 10 0 20 -244370 -66577
+0;
+#X obj 144 773 env~ 2048;
+#X msg -555 665 stop;
+#X obj -555 631 r tempoGoOutBang;
 #X connect 0 0 24 0;
 #X connect 1 0 9 0;
 #X connect 2 0 10 0;
@@ -250,6 +260,7 @@ banque_de_loop 0 -6 0 10 -33289 -262144 -262144 0;
 #X connect 21 0 15 0;
 #X connect 22 0 36 0;
 #X connect 24 0 128 0;
+#X connect 24 0 134 0;
 #X connect 25 0 60 0;
 #X connect 26 0 59 0;
 #X connect 30 0 65 0;
@@ -342,4 +353,7 @@ banque_de_loop 0 -6 0 10 -33289 -262144 -262144 0;
 #X connect 129 0 82 0;
 #X connect 130 0 131 0;
 #X connect 131 0 69 0;
+#X connect 134 0 132 0;
+#X connect 135 0 32 0;
+#X connect 136 0 135 0;
 #X coords 0 -1 1 1 132 500 2 -250 30;

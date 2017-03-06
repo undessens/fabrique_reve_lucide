@@ -10,12 +10,12 @@
 #X obj 91 86 sel 1 0;
 #X obj -69 -99 cnv 15 228 48 empty empty EDITER 20 12 0 14 -241404
 -66577 0;
-#X obj 186 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 186 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 74 -98 tgl 15 0 empty editMode-edit editer 0 25 0 10 -4032 -1
--1 0 1;
+-1 1 1;
 #X obj 122 -81 tgl 15 0 empty editMode-use utiliser -10 25 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X text -69 -67 pour changer le mode;
 #X msg -131 115 0;
 #X msg -94 115 1;
@@ -38,6 +38,7 @@
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
+#X connect 6 0 9 0;
 #X connect 7 0 1 0;
 #X connect 7 0 13 0;
 #X connect 7 0 14 0;

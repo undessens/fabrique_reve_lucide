@@ -10,7 +10,7 @@
 #X obj 274 113 ../save/save-int-separate midireceiv-\$1;
 #X obj 197 46 route 1;
 #X text 110 50 no route until sereral midi inuput;
-#X obj 73 6 r to_midi1;
+#X obj 73 6 r to_midi_in1;
 #X connect 2 0 6 0;
 #X connect 2 0 7 1;
 #X connect 6 0 1 0;
