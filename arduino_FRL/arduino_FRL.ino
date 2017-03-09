@@ -8,20 +8,19 @@
 
 //#include <Servo.h>
 #include<Wire.h>
-#define ANALOGIN 5
-#define DIGITALIN 5
-#define DIGITALOUT 2
+#define ANALOGIN 4
+#define DIGITALIN 4
+#define DIGITALOUT 3
+#define ANALOG_THRESH 4
 
 #define I2CADRESS_LED 56
 
 int analogValue[ANALOGIN];
-int analogValueMin[ANALOGIN];
-int analogValueMax[ANALOGIN];
-int analogPin[] = { A0, A1, A2, A3, A4 };
+int analogPin[] = { A0, A1, A2, A3 };
 int digitalinValue[DIGITALIN];
-int digitalinPin[] = { 2, 3, 4, 5 , 6};
+int digitalinPin[] = { 5, 6, 7, 8};
 int digitaloutValue[DIGITALOUT];
-int digitaloutPin[] = {7, 8 };
+int digitaloutPin[] = {2, 3, 4 };
 byte ledI2C = 0;
 
 // --- Servo not available
@@ -34,8 +33,6 @@ void setup(){
     
     pinMode(analogPin[i], INPUT_PULLUP);
     analogValue[i] = analogRead(analogPin[i]);
-    analogValueMin[i] = 120; 
-    analogValueMax[i] = 880;
 
   }
 
@@ -44,11 +41,7 @@ void setup(){
     digitalinValue[i] = digitalRead(digitalinPin[i]);
   }
 
-    for(int i=0 ; i<DIGITALOUT ; i++ ){
-    pinMode(digitaloutPin[i], OUTPUT );
-    digitaloutValue[i] = LOW;
-    digitalWrite(digitaloutPin[i], LOW);
-    }
+    
     
     // Servo not available
     //servo1.attach(servo1pin);
@@ -57,7 +50,12 @@ void setup(){
     // Wire for I2C plugins
     Wire.begin();
 
-   
+   for(int i=0 ; i<DIGITALOUT ; i++ ){
+    pinMode(digitaloutPin[i], OUTPUT );
+    digitaloutValue[i] = LOW;
+    digitalWrite(digitaloutPin[i], HIGH);
+    digitalWrite(digitaloutPin[i], LOW);
+    }
    
    Serial.begin(57600);
    delay(100);
@@ -75,15 +73,11 @@ void loop(){
     
     int newValueAn = analogRead(analogPin[i]);
 
-    //Update min and max
-    if ( newValueAn > analogValueMax[i] ) analogValueMax[i] = newValueAn;
-    if ( newValueAn < analogValueMin[i] ) analogValueMin[i] = newValueAn;
-
     //Send message if value is different
-    if ( abs( newValueAn - analogValue[i]) > 5 ){
+    if ( abs( newValueAn - analogValue[i]) > ANALOG_THRESH ){
      
       analogValue[i] = newValueAn;
-      sendMessage(i, map(newValueAn, analogValueMin[i], analogValueMax[i], 0, 255 )); 
+      sendMessage(i, map(newValueAn, 0, 1024, 0, 255 )); 
       
     }
 
@@ -120,19 +114,19 @@ void loop(){
       
          switch(channel){
              case 0:
-                    analogWrite(digitaloutPin[0], value);
+                    digitalWrite(digitaloutPin[0], value);
               break;
              case 1:
-                   analogWrite(digitaloutPin[1], value);
+                   digitalWrite(digitaloutPin[1], value);
                 break; 
             case 2: 
-                   analogWrite(digitaloutPin[2], value);
+                   digitalWrite(digitaloutPin[2], value);
                 break;
             case 3: 
-                   analogWrite(digitaloutPin[3], value);
+                   digitalWrite(digitaloutPin[3], value);
                 break; 
             case 4: 
-                 analogWrite(digitaloutPin[4], value);
+                 digitalWrite(digitaloutPin[4], value);
                 break; 
             case 5: 
                  
@@ -167,7 +161,7 @@ void loop(){
   
   
   
-  delay(20);
+  delay(5);
   
   
 }
