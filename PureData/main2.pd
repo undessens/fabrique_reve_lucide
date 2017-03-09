@@ -1,4 +1,4 @@
-#N canvas 49 81 1284 720 12;
+#N canvas 144 23 1284 720 12;
 #X obj 96 -10 cnv 15 240 100 empty empty empty 20 12 0 14 -66577 -66577
 0;
 #X obj 96 92 cnv 15 1100 502 empty empty empty 20 12 0 14 -66577 -262144
@@ -14,9 +14,8 @@
 0;
 #X coords 0 -1 1 1 40 20 2 200 100;
 #X restore 111 58 pd sub;
-#X obj 1064 92 audio_effect/main_effect;
-#X obj 96 92 looping/main_rec_loop;
-#N canvas 153 146 999 543 main-input 0;
+#X obj 249 93 looping/main_rec_loop;
+#N canvas 354 175 999 543 main-input 0;
 #N canvas 452 325 450 300 to-analog-in 0;
 #X obj 11 90 t b f;
 #X obj 68 90 t b f;
@@ -137,33 +136,33 @@
 #X restore 570 308 pd to-digital-in;
 #X obj 111 111 cnv 15 853 98 empty empty ENTREES 245 15 0 30 -99865
 -262144 0;
-#X obj 504 172 tgl 35 0 digital_in1 empty a 10 15 0 26 -14109 -262144
+#X obj 504 162 tgl 35 0 digital_in1 empty a 10 15 0 26 -14109 -262144
+-262144 0 255;
+#X obj 541 162 tgl 35 0 digital_in2 empty b 10 15 0 26 -14109 -262144
+-262144 0 255;
+#X obj 578 162 tgl 35 0 digital_in3 empty c 10 15 0 26 -14109 -262144
+-262144 0 255;
+#X obj 615 162 tgl 35 0 digital_in4 empty d 10 15 0 26 -14109 -262144
+-262144 0 255;
+#X obj 652 162 tgl 35 0 digital_in5 empty e 10 15 0 26 -14109 -262144
 -262144 0 1;
-#X obj 541 172 tgl 35 0 digital_in2 empty b 10 15 0 26 -14109 -262144
--262144 0 1;
-#X obj 578 172 tgl 35 0 digital_in3 empty c 10 15 0 26 -14109 -262144
--262144 0 1;
-#X obj 615 172 tgl 35 0 digital_in4 empty d 10 15 0 26 -14109 -262144
--262144 0 1;
-#X obj 652 172 tgl 35 0 digital_in5 empty e 10 15 0 26 -14109 -262144
--262144 0 1;
-#X obj 689 172 tgl 35 0 digital_in6 empty f 10 15 0 26 -14109 -262144
+#X obj 689 162 tgl 35 0 digital_in6 empty f 10 15 0 26 -14109 -262144
 -262144 0 1;
 #X obj 743 151 vsl 34 55 0 255 0 0 empty empty 1 11 24 0 25 -86735
--262144 -262144 0 1;
+-262144 -262144 0 0;
 #X obj 816 151 vsl 34 55 0 255 0 0 empty empty 3 11 24 0 25 -86735
--262144 -262144 0 1;
+-262144 -262144 0 0;
 #X obj 852 151 vsl 34 55 0 255 0 0 empty empty 4 11 24 0 25 -86735
--262144 -262144 0 1;
+-262144 -262144 0 0;
 #X obj 780 151 vsl 34 55 0 255 0 0 empty empty 2 11 24 0 25 -86735
--262144 -262144 0 1;
+-262144 -262144 0 0;
 #X obj 888 151 vsl 34 55 0 255 0 0 empty empty 5 11 24 0 25 -86735
--262144 -262144 0 1;
+-262144 -262144 0 0;
 #X obj 924 151 vsl 34 55 0 255 0 0 empty empty 6 11 24 0 25 -86735
--262144 -262144 0 1;
-#X obj 556 117 cnv 15 100 14 empty empty digitale 0 6 0 14 -14109 -262144
+-262144 -262144 0 0;
+#X obj 556 132 cnv 15 100 14 empty empty Boutons 0 6 0 14 -14109 -262144
 0;
-#X obj 805 118 cnv 15 100 14 empty empty analogique 0 6 0 14 -74640
+#X obj 805 131 cnv 15 115 14 empty empty Potentiometres 0 6 0 14 -74640
 -262144 0;
 #N canvas 712 273 450 300 midi-input 0;
 #X obj 101 37 route 60 63 65 66 67 70 72 75;
@@ -179,7 +178,7 @@
 #X obj 101 126 tgl 25 0 empty empty h 10 11 0 12 -1375 -262144 -262144
 0 1;
 #X obj 126 126 tgl 25 0 empty empty j 10 11 0 12 -1375 -262144 -262144
-1 1;
+0 1;
 #X obj 151 126 tgl 25 0 empty empty k 10 11 0 12 -1375 -262144 -262144
 0 1;
 #X obj 176 126 tgl 25 0 empty empty l 10 11 0 12 -1375 -262144 -262144
@@ -197,24 +196,24 @@
 #X connect 1 0 10 0;
 #X coords 0 -1 1 1 102 52 2 100 100;
 #X restore 229 157 pd midi-input;
-#X obj 250 117 cnv 15 60 15 empty empty midi 7 6 0 14 -1375 -262144
+#X obj 250 134 cnv 15 60 15 empty empty midi 7 6 0 14 -1375 -262144
 0;
 #X obj 19 -66 input/audio_in 1040;
 #X obj 167 -69 input/clavier_midi 862;
 #X obj 304 -72 input/clavier;
 #X obj 469 -69 input/arduino_in;
 #X obj 686 -58 arduino/arduino_main;
-#X obj 114 115 cnv 15 60 15 empty empty audio 7 6 0 14 -122908 -262144
+#X obj 134 134 cnv 15 60 15 empty empty audio 7 6 0 14 -122908 -262144
 0;
 #X obj 392 142 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
-#X obj 392 142 cnv 15 60 15 empty empty edit 7 6 0 14 -1 -262144 0
-;
+-1 -1 1;
+#X obj 392 142 cnv 15 60 15 empty empty edit 7 6 0 12 -128992 -262144
+0;
 #N canvas 767 405 450 300 audio1 0;
 #X obj 101 38 env~ 8162;
 #X obj 101 10 inlet~;
 #X obj 101 102 vsl 15 65 0 127 0 0 empty empty 1 3 23 0 12 -122908
--262144 -262144 3277 1;
+-262144 -262144 2938 1;
 #X obj 101 65 - 0;
 #X obj -15 99 s~ input_audio1;
 #X connect 0 0 3 0;
@@ -225,15 +224,15 @@
 #X restore 114 135 pd audio1;
 #N canvas 281 129 450 300 popup 0;
 #X obj 44 52 bang;
-#X msg 44 83 \; pd-main-input vis 1;
 #X obj 282 55 key;
 #X obj 282 87 sel 27;
-#X msg 282 118 \; pd-main-input vis 0;
 #X obj 44 21 inlet;
-#X connect 0 0 1 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 5 0 0 0;
+#X msg 43 83 \; pd-main-input vis 1;
+#X msg 282 118 \; pd-main-input vis 0;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
 #X restore 393 211 pd popup;
 #X connect 3 0 1 0;
 #X connect 4 0 1 1;
@@ -249,12 +248,6 @@
 #X connect 14 0 0 5;
 #X connect 19 0 27 0;
 #X connect 20 0 17 0;
-#X connect 21 0 3 0;
-#X connect 21 1 4 0;
-#X connect 21 2 5 0;
-#X connect 21 3 6 0;
-#X connect 21 4 7 0;
-#X connect 21 5 8 0;
 #X connect 22 0 9 0;
 #X connect 22 1 12 0;
 #X connect 22 2 10 0;
@@ -268,7 +261,11 @@
 #X connect 25 0 28 0;
 #X coords 0 -1 1 1 855 100 1 110 110;
 #X restore 340 -10 pd main-input;
-#X obj 647 93 looping/main_read_loop 1;
-#X obj 239 92 sampling/read_8sample 1;
+#X obj 445 93 sampling/read_8sample 1;
+#X obj 1060 93 audio_effect/main_effect;
+#X obj 629 93 looping/main_read_loop 1;
 #X obj 919 93 looping/main_read_loop 3;
-#X obj 784 93 looping/main_read_loop 2;
+#X obj 774 93 looping/main_read_loop 2;
+#X obj 175 62 bng 15 250 50 0 init-affectation empty empty 17 7 0 10
+-258113 -4160 -1;
+#X obj 101 93 audio_effect/main_mic;

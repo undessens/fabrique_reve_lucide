@@ -1,10 +1,10 @@
-#N canvas 174 188 608 383 10;
-#X obj 274 113 ../save/save-int-separate digreceiv-\$1;
+#N canvas 352 182 608 383 10;
+#X obj 331 109 ../save/save-int-separate digreceiv-\$1;
 #X obj 73 6 r digital-in;
 #X obj 80 41 route 0;
 #X obj 70 220 outlet;
-#X obj 273 147 s \$0-out;
-#X obj 275 3 r \$0-in;
+#X obj 330 143 s \$0-out;
+#X obj 275 -47 r \$0-in;
 #X obj 32 116 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 229 300 label \$1;
@@ -37,20 +37,29 @@
 #X connect 7 0 9 0;
 #X connect 8 0 9 0;
 #X restore 230 217 pd intToLetter;
-#X obj 101 101 nbx 3 13 0 6 0 0 \$0-in \$0-out empty 0 -8 0 10 -262144
--1 -1 5 256;
+#X obj 101 102 nbx 3 13 0 60 0 0 \$0-in \$0-out empty 0 -8 0 10 -262144
+-1 -1 28 256;
 #X obj 101 101 cnv 12 33 14 empty empty -> 2 6 1 12 -14109 -262144
 0;
-#X obj 121 101 cnv 12 15 14 empty dreceive_cnv_\$1 e 2 6 1 12 -14109
+#X obj 121 101 cnv 12 15 14 empty dreceive_cnv_\$1 b 2 6 1 12 -14109
 -262144 0;
+#X obj 275 -3 i 0;
+#X obj 343 -45 r init-affectation;
+#X msg 343 -22 0;
+#X obj 275 -24 / 10;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 0 6 0;
 #X connect 5 0 0 0;
-#X connect 5 0 2 1;
-#X connect 5 0 10 0;
+#X connect 5 0 17 0;
 #X connect 7 0 9 0;
 #X connect 8 0 7 0;
 #X connect 10 0 8 0;
+#X connect 14 0 2 1;
+#X connect 14 0 10 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 16 0 0 0;
+#X connect 17 0 14 0;
 #X coords 0 -1 1 1 37 16 2 100 100;

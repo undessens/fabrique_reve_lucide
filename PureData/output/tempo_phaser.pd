@@ -1,4 +1,4 @@
-#N canvas 37 23 780 782 10;
+#N canvas 421 60 780 782 10;
 #X floatatom -50 84 5 0 0 0 - - -;
 #X obj -50 155 phasor~;
 #X obj -70 315 snapshot~;
@@ -112,29 +112,29 @@
 #X floatatom -70 420 5 0 0 0 - - -;
 #X obj -31 418 r fix-tempo;
 #X floatatom -173 533 5 0 0 0 - - -;
-#N canvas 613 350 484 374 tempo_bar 0;
+#N canvas 778 244 484 374 tempo_bar 1;
 #X obj 135 -994 s tempo_bar;
 #X obj 97 -1079 i 0;
 #X obj 99 -1027 % 8;
 #X obj 106 -1158 i 0;
 #X obj 125 -1121 change;
-#X obj 83 -1120 + 1;
 #X floatatom 31 -994 5 0 0 0 - - -;
 #X obj 106 -1220 inlet;
 #X obj 76 -992 outlet;
-#X obj 98 -1056 + 0;
 #X obj 106 -1190 * 16;
+#X obj 98 -1056 + 0;
+#X obj 83 -1120 + 0;
 #X connect 1 0 9 0;
 #X connect 2 0 0 0;
-#X connect 2 0 6 0;
-#X connect 2 0 8 0;
+#X connect 2 0 7 0;
+#X connect 2 0 5 0;
 #X connect 3 0 4 0;
-#X connect 3 0 5 0;
+#X connect 3 0 10 0;
 #X connect 4 0 1 0;
-#X connect 5 0 1 1;
-#X connect 7 0 10 0;
+#X connect 6 0 8 0;
+#X connect 8 0 3 0;
 #X connect 9 0 2 0;
-#X connect 10 0 3 0;
+#X connect 10 0 1 1;
 #X restore -20 502 pd tempo_bar;
 #X floatatom -21 535 5 0 0 0 - - -;
 #X obj -138 -76 * 0.8;
@@ -154,9 +154,9 @@
 #X obj 0 -197 r tempo_bar;
 #X obj -69 -109 cnv 15 290 90 empty empty empty 57 10 0 14 -253822
 -33289 0;
-#X floatatom -66 -38 6 0 0 0 - - -;
-#X obj -63 -88 hsl 128 25 80 200 0 0 empty empty empty 78 9 0 10 -238739
--1 -1 2600 0;
+#X floatatom -138 -49 6 0 0 0 - - #0-tempoValue;
+#X obj -63 -88 hsl 128 25 80 200 0 0 empty \$0-tempoSlider 65 86 12
+0 14 -238739 -1 -1 200 0;
 #X obj -25 -37 bng 15 250 50 0 empty tempo_click_bang empty 17 7 0
 10 -159808 -1 -1;
 #X obj 127 -38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -180,8 +180,6 @@
 #X msg 86 -180 1;
 #X obj 162 40 sel 1;
 #X obj -159 -325 / 255;
-#X obj -159 -298 * 160;
-#X obj -159 -271 + 40;
 #X obj 247 -302 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 200 -243 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -218,21 +216,26 @@
 #X connect 8 0 1 0;
 #X connect 9 0 2 0;
 #X restore 72 501 pd tempo_2bar;
-#X floatatom 31 -38 5 0 0 0 - - -;
-#X obj 64 56 s transpose;
-#X obj 67 23 * 10;
 #X obj -54 -106 cnv 15 100 16 empty empty TEMPO 0 7 0 16 -253822 -33289
 0;
-#X obj 94 -106 cnv 15 70 16 empty empty LECTURE 0 7 0 16 -253822 -33289
+#X obj 70 -108 cnv 15 100 26 empty empty LECTURE 0 12 0 24 -1 -262144
 0;
 #X obj -63 -61 ../extra/analog_receive tenpo;
 #X obj -206 -1 s \$0-tempoFromAnalog;
 #X obj -223 -351 r \$0-tempoFromAnalog;
-#X obj 88 -88 ../extra/digital_receive playstop;
+#X obj 114 -80 ../extra/digital_receive playstop;
 #X obj 255 -16 s \$0-playFromDigital;
 #X obj 152 -353 r \$0-playFromDigital;
 #X obj 192 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X obj 314 243 s \$0-tempoSlider;
+#X obj 314 135 r \$0-tempoValue;
+#X obj 314 186 symbol \$1;
+#X msg 314 213 label \$1;
+#X obj 314 160 makefilename %d;
+#X obj 0 -173 + 1;
+#X obj -159 -298 * 96;
+#X obj -159 -271 64;
 #X connect 0 0 1 0;
 #X connect 1 0 52 0;
 #X connect 2 0 18 0;
@@ -260,18 +263,18 @@
 #X connect 28 0 31 0;
 #X connect 29 0 1 1;
 #X connect 30 0 29 0;
-#X connect 30 0 84 0;
+#X connect 30 0 79 0;
 #X connect 31 0 33 0;
 #X connect 31 1 32 0;
 #X connect 32 0 40 0;
-#X connect 34 0 65 0;
-#X connect 34 1 69 0;
+#X connect 34 0 63 0;
+#X connect 34 1 67 0;
 #X connect 35 0 1 0;
 #X connect 36 0 35 0;
-#X connect 37 0 44 0;
+#X connect 37 0 85 0;
 #X connect 40 0 23 0;
 #X connect 40 0 6 0;
-#X connect 40 0 68 1;
+#X connect 40 0 66 1;
 #X connect 40 0 24 0;
 #X connect 42 0 15 0;
 #X connect 45 0 48 1;
@@ -284,28 +287,31 @@
 #X connect 52 0 5 0;
 #X connect 53 0 17 0;
 #X connect 53 0 21 0;
-#X connect 53 0 72 0;
+#X connect 53 0 70 0;
 #X connect 55 0 58 0;
 #X connect 56 0 55 0;
 #X connect 57 0 55 0;
 #X connect 58 0 34 0;
 #X connect 58 1 14 0;
-#X connect 59 0 60 0;
-#X connect 60 0 61 0;
-#X connect 61 0 32 0;
-#X connect 62 0 64 0;
-#X connect 63 0 55 0;
-#X connect 64 1 63 0;
-#X connect 66 0 68 0;
-#X connect 68 0 67 0;
-#X connect 68 0 6 0;
-#X connect 70 0 63 0;
-#X connect 70 1 62 0;
-#X connect 72 0 71 0;
-#X connect 73 0 75 0;
-#X connect 75 0 74 0;
-#X connect 78 0 79 0;
-#X connect 80 0 59 0;
-#X connect 81 0 82 0;
-#X connect 83 0 70 0;
+#X connect 59 0 86 0;
+#X connect 60 0 62 0;
+#X connect 61 0 55 0;
+#X connect 62 1 61 0;
+#X connect 64 0 66 0;
+#X connect 66 0 65 0;
+#X connect 66 0 6 0;
+#X connect 68 0 61 0;
+#X connect 68 1 60 0;
+#X connect 70 0 69 0;
+#X connect 73 0 74 0;
+#X connect 75 0 59 0;
+#X connect 76 0 77 0;
+#X connect 78 0 68 0;
+#X connect 81 0 84 0;
+#X connect 82 0 83 0;
+#X connect 83 0 80 0;
+#X connect 84 0 82 0;
+#X connect 85 0 44 0;
+#X connect 86 0 87 0;
+#X connect 87 0 32 0;
 #X coords 0 -1 1 1 290 90 2 -70 -110;

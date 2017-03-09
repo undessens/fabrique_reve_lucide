@@ -1,0 +1,43 @@
+#N canvas 525 267 608 383 10;
+#X obj 375 71 s \$0-out;
+#X obj 275 -51 r \$0-in;
+#X msg 228 288 label \$1;
+#X obj 228 260 symbol \$1;
+#X obj 101 101 nbx 3 13 0 15 0 0 \$0-in \$0-out empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 122 101 cnv 12 14 14 empty empty -> 2 6 1 12 -59679 -262144
+0;
+#X obj 101 101 cnv 12 20 14 empty dsend_cnv_\$1 - 2 6 1 12 -59679 -262144
+0;
+#X obj 376 37 ../save/save-int-separate digsend-\$1;
+#X obj 228 236 makefilename %d;
+#X obj 228 316 s dsend_cnv_\$1;
+#X obj 201 204 sel 0;
+#X msg 195 235 -;
+#X obj 75 59 prepend;
+#X obj 75 10 inlet;
+#X obj 75 166 s digital_out;
+#X msg 75 36 \$1;
+#X obj 275 -26 / 5;
+#X obj 275 0 i 0;
+#X obj 372 -51 r init-affectation;
+#X msg 369 -26 0;
+#X connect 1 0 16 0;
+#X connect 1 0 7 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 7 0 0 0;
+#X connect 8 0 3 0;
+#X connect 10 0 11 0;
+#X connect 10 1 8 0;
+#X connect 11 0 3 0;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X connect 15 0 12 0;
+#X connect 16 0 17 0;
+#X connect 17 0 12 1;
+#X connect 17 0 10 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 19 0 7 0;
+#X coords 0 -1 1 1 37 16 2 100 100;

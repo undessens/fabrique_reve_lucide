@@ -1,29 +1,21 @@
-#N canvas 534 167 1103 393 10;
+#N canvas 191 382 1103 393 10;
 #X obj 101 101 cnv 15 798 99 empty empty SORTIES 260 76 0 30 -53394
 -262144 0;
-#X obj 567 143 tgl 35 0 empty empty 1 10 15 0 26 -14109 -262144 -262144
+#X obj 637 133 tgl 35 0 empty empty 1 10 15 0 26 -59679 -262144 -262144
+1 1;
+#X obj 674 133 tgl 35 0 empty empty 2 10 15 0 26 -59679 -262144 -262144
 0 1;
-#X obj 604 143 tgl 35 0 empty empty 2 10 15 0 26 -14109 -262144 -262144
-0 1;
-#X obj 641 143 tgl 35 0 empty empty 3 10 15 0 26 -14109 -262144 -262144
-0 1;
-#X obj 678 143 tgl 35 0 empty empty 4 10 15 0 26 -14109 -262144 -262144
-0 1;
-#X obj 715 143 tgl 35 0 empty empty 5 10 15 0 26 -14109 -262144 -262144
-0 1;
-#X obj 752 143 tgl 35 0 empty empty 6 10 15 0 26 -14109 -262144 -262144
-0 1;
+#X obj 711 133 tgl 35 0 empty empty 3 10 15 0 26 -59679 -262144 -262144
+1 1;
 #X obj 104 274 audio_out;
-#X obj 325 267 arduino_out;
 #N canvas 822 355 450 300 midi_output 0;
 #X obj 111 47 route 60 63 65 66 67 70 72 75;
-#X obj 109 -11 inlet;
 #X obj 101 100 tgl 25 0 empty empty 1 10 11 0 12 -1375 -262144 -262144
-0 127;
+0 1;
 #X obj 126 100 tgl 25 0 empty empty 2 10 11 0 12 -1375 -262144 -262144
-0 127;
+0 1;
 #X obj 151 100 tgl 25 0 empty empty 3 10 11 0 12 -1375 -262144 -262144
-0 127;
+0 1;
 #X obj 176 100 tgl 25 0 empty empty 4 10 11 0 12 -1375 -262144 -262144
 0 1;
 #X obj 101 125 tgl 25 0 empty empty 5 10 11 0 12 -1375 -262144 -262144
@@ -33,34 +25,33 @@
 #X obj 151 125 tgl 25 0 empty empty 7 10 11 0 12 -1375 -262144 -262144
 0 127;
 #X obj 176 125 tgl 25 0 empty empty 8 10 11 0 12 -1375 -262144 -262144
-0 127;
+0 1;
 #X obj 23 86 outlet;
-#X connect 0 0 2 0;
-#X connect 0 1 3 0;
-#X connect 0 2 4 0;
-#X connect 0 3 5 0;
-#X connect 0 4 6 0;
-#X connect 0 5 7 0;
-#X connect 0 6 8 0;
-#X connect 0 7 9 0;
-#X connect 1 0 0 0;
-#X connect 1 0 10 0;
+#X obj 112 -4 r midi_out1;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 0 3 4 0;
+#X connect 0 4 5 0;
+#X connect 0 5 6 0;
+#X connect 0 6 7 0;
+#X connect 0 7 8 0;
+#X connect 10 0 0 0;
+#X connect 10 0 9 0;
 #X coords 0 -1 1 1 102 50 1 100 100;
 #X restore 244 130 pd midi_output;
-#X obj 153 23 r midi_out1;
-#X obj 200 60 print midiout;
-#X obj 644 183 cnv 15 100 14 empty empty digitale 0 6 0 14 -14109 -262144
+#X obj 644 183 cnv 15 100 14 empty empty Leds 0 6 0 14 -59679 -262144
 0;
 #X obj 267 183 cnv 15 60 15 empty empty midi 7 6 0 14 -1375 -262144
 0;
 #X obj 106 180 cnv 15 60 15 empty empty audio 7 6 0 14 -122908 -262144
 0;
-#N canvas 757 357 450 300 audio1 0;
+#N canvas 757 357 450 300 audio1 1;
 #X obj 101 102 vsl 15 65 0 127 0 0 empty empty 1 3 23 0 12 -122908
 -262144 -262144 0 1;
 #X obj 101 65 - 0;
 #X obj 64 217 outlet~;
-#N canvas 418 334 575 316 fromAudio 0;
+#N canvas 418 334 575 316 fromAudio 1;
 #X obj 1 176 outlet~;
 #X obj -34 8 r~ to_master-son1;
 #X obj 103 9 r~ to_master-loop1;
@@ -68,24 +59,34 @@
 #X obj 75 52 r~ to_master-loop3;
 #X obj 274 15 r~ to_master-effet;
 #X obj -173 11 r~ to_master-looper;
+#X obj 248 110 r~ to_master-mic;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
+#X connect 7 0 0 0;
 #X restore -13 -7 pd fromAudio;
-#X obj 101 38 env~ 256;
 #X floatatom 155 90 5 0 0 0 - - -;
+#X obj 101 38 env~ 2048;
 #X connect 1 0 0 0;
 #X connect 3 0 2 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 4 0 5 0;
+#X connect 3 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 0 4 0;
 #X coords 0 -1 1 1 16 70 2 100 100;
 #X restore 111 100 pd audio1;
-#X connect 9 0 8 8;
-#X connect 10 0 9 0;
+#X obj 636 18 r digital_out;
+#X obj 634 55 route 1 2 3;
+#X obj 362 261 lucibox_led;
+#X obj 615 251 arduino_out;
+#X connect 1 0 13 0;
+#X connect 2 0 13 1;
+#X connect 3 0 13 2;
+#X connect 9 0 4 0;
 #X connect 10 0 11 0;
-#X connect 15 0 7 0;
+#X connect 11 0 1 0;
+#X connect 11 1 2 0;
+#X connect 11 2 3 0;
 #X coords 0 -1 1 1 800 100 2 100 100;
