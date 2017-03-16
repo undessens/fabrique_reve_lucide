@@ -14,6 +14,7 @@
 #define ANALOG_THRESH 4
 
 #define I2CADRESS_LED 56
+#define I2CADRESS_PAD 57
 
 int analogValue[ANALOGIN];
 int analogPin[] = { A0, A1, A2, A3 };
@@ -22,6 +23,7 @@ int digitalinPin[] = { 5, 6, 7, 8};
 int digitaloutValue[DIGITALOUT];
 int digitaloutPin[] = {2, 3, 4 };
 byte ledI2C = 0;
+int padValue[8];
 
 // --- Servo not available
 //Servo servo1;
@@ -47,8 +49,18 @@ void setup(){
     //servo1.attach(servo1pin);
     //servo1.write(0);
   
-    // Wire for I2C plugins
+    // Wire for I2C  : led and pad
     Wire.begin();
+
+    Wire.beginTransmission(I2CADRESS_PAD); 
+    //Init pad with 255 as a Pullup Input    
+    Wire.write(255);
+    Wire.endTransmission();
+
+    for(int i=0; i<8; i++){
+      padValue[i] = 0;
+    }
+      
 
    for(int i=0 ; i<DIGITALOUT ; i++ ){
     pinMode(digitaloutPin[i], OUTPUT );
@@ -94,6 +106,10 @@ void loop(){
       sendMessage(i + 20, newValueDi*255); 
       
     }
+
+
+    //Read pad from I2C and send message
+    readPad();
     
     
     
@@ -191,6 +207,38 @@ else {
     Wire.beginTransmission(56);     //Begin the transmission to PCF8574
     Wire.write(ledI2C);                                //Send the data to PCF8574
     Wire.endTransmission(); 
+
+}
+
+
+void readPad(){
+
+    byte fromPCF;
+    
+    Wire.beginTransmission(I2CADRESS_PAD);     //Begin the transmission to PCF8574                              //Send the data to PCF8574
+    Wire.endTransmission(); 
+    Wire.requestFrom(57,1); 
+    if(Wire.available())     //If the request is available
+    {
+        fromPCF = Wire.read();
+        for(int i=0; i<8; i++){
+              
+            
+            if(  (fromPCF & ( 1<<i ))< 1 && padValue[i]==0  ) {
+              sendMessage( 50+i , 1 );
+              padValue[i]=1;
+              
+            }
+            if(  (fromPCF & ( 1<<i ))> 0 && padValue[i]==1  ) {
+              sendMessage( 50+i , 0 );
+              padValue[i]=0;
+            }
+          
+        }
+        
+    }
+
+
 
 }
 
